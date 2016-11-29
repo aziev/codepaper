@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Particles</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 </head>
 <body>
@@ -22,11 +23,23 @@
                     </a>
                     <h2>Разработка на Laravel с нуля</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio non quam blanditiis, modi commodi excepturi impedit laudantium consequatur tempora dolorem obcaecati quasi, sunt dolorum magni nisi possimus fuga! Non, dolores!</p>
+                    <div class="info">
+                        <span class="date">29.11.2016</span>
+                        <span class="views">
+                            <i class="fa fa-eye" aria-hidden="true"></i>13
+                        </span>
+                    </div>
                 </article>
                 <article class="article">
                     <img src="http://placehold.it/500x300/09b5df" alt="">
                     <h2>Разработка на Laravel с нуля</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio non quam blanditiis, modi commodi excepturi impedit laudantium consequatur tempora dolorem obcaecati quasi, sunt dolorum magni nisi possimus fuga! Non, dolores!</p>
+                    <div class="info">
+                        <span class="date">13.11.2016</span>
+                        <span class="views">
+                            <i class="fa fa-eye" aria-hidden="true"></i>29
+                        </span>
+                    </div>
                 </article>
             </div>
         </div>

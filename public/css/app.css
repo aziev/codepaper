@@ -1244,4 +1244,14 @@ footer {
   margin-top: 20px;
 }
 
+.article .info {
+  font-size: 14px;
+  color: #666666;
+}
+
+.article .info span {
+  display: inline-block;
+  margin-right: 20px;
+}
+
 /*# sourceMappingURL=app.css.map */

@@ -53,4 +53,12 @@ footer{
         max-width: 100%;
         margin-top: 20px;
     }
+    .info{
+        font-size: 14px;
+        color: lighten(#333, 20%);
+        span{
+            display: inline-block;
+            margin-right: 20px;
+        }
+    }
 }
