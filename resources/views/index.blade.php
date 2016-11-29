@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Particles</title>
+    <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 </head>
@@ -28,6 +28,9 @@
                         <span class="views">
                             <i class="fa fa-eye" aria-hidden="true"></i>13
                         </span>
+                        <span class="comments">
+                            <i class="fa fa-comments-o" aria-hidden="true"></i>20
+                        </span>
                     </div>
                 </article>
                 <article class="article">
@@ -39,13 +42,16 @@
                         <span class="views">
                             <i class="fa fa-eye" aria-hidden="true"></i>29
                         </span>
+                        <span class="comments">
+                            <i class="fa fa-comments-o" aria-hidden="true"></i>30
+                        </span>
                     </div>
                 </article>
             </div>
         </div>
     </div>
     <footer class="container">
-        <p>&copy; Particles 2017</p>
+        <p>&copy; {{ config('app.name') }} 2017</p>
     </footer>
 </body>
 </html>

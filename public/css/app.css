@@ -1254,4 +1254,9 @@ footer {
   margin-right: 20px;
 }
 
+.article .fa {
+  display: inline-block;
+  margin-right: 5px;
+}
+
 /*# sourceMappingURL=app.css.map */
