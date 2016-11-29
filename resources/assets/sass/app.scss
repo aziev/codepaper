@@ -1,9 +1,56 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
-// Variables
-@import "variables";
+@import "font-PFRegal";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap";
+
+
+// Colors
+
+$dark: #252525;
+
+
+//Styles
+
+body{
+    font-family: 'PFRegal', serif;
+    font-size: 16px;
+}
+
+a{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+p{
+    font-size: 18px;
+}
+
+footer{
+    text-align: center;
+}
+
+.mainnav{
+    background: $dark;
+    padding: 20px 0;
+    a{
+        color: #fff;
+        margin-right: 20px;
+        text-decoration: none;
+        &:hover{
+            color: darken(#fff, 20%);
+        }
+    }
+}
+
+.article{
+    margin: 50px 0;
+    img{
+        display: block;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
