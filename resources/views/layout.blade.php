@@ -9,7 +9,7 @@
 <body>
     <nav class="mainnav">
         <div class="container">
-            <a href="">Все статьи</a>
+            <a href="{{ URL::to('/') }}">Все статьи</a>
             <a href="">Категории</a>
             <a href="">О сайте</a>
         </div>

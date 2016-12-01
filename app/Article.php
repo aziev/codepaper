@@ -20,7 +20,7 @@ class Article extends Model
      */
     public function getPreviewText($length = 300)
     {
-        //
+        return str_limit($this->text, $length);
     }
 
     /**
@@ -30,17 +30,7 @@ class Article extends Model
      */
     public function getDate()
     {
-        //
-    }
-
-    /**
-     * Get the article's views count
-     *
-     * @return integer
-     */
-    public function getViewsCount()
-    {
-        //
+        return $this->created_at->format('d.m.Y');
     }
 
 }

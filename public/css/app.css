@@ -1209,6 +1209,8 @@ a {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   letter-spacing: 0.02em;
+  -webkit-transition: color .2s;
+  transition: color .2s;
 }
 
 p {
@@ -1220,7 +1222,7 @@ footer {
 }
 
 .mainnav {
-  background: #252525;
+  background: #333333;
   padding: 20px 0;
 }
 
@@ -1257,6 +1259,16 @@ footer {
 .article .fa {
   display: inline-block;
   margin-right: 5px;
+}
+
+.article .title {
+  font-family: 'PFRegal', serif;
+  color: #333333;
+  text-decoration: none;
+}
+
+.article .title:hover {
+  color: #0096ff;
 }
 
 /*# sourceMappingURL=app.css.map */

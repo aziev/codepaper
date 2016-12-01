@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class ArticlesTableSeeder extends Seeder
 {
@@ -14,20 +15,22 @@ class ArticlesTableSeeder extends Seeder
         DB::table('articles')->delete();
         DB::table('articles')->truncate();
 
+        $faker = Faker::create();
+
         DB::table('articles')->insert([[
         	'title' => 'Разработка на Laravel',
-        	'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dolorum sit aliquid iusto quis suscipit architecto voluptatem illum, enim deserunt, expedita veritatis veniam, a quos nostrum distinctio quibusdam voluptatum. Quae.',
+        	'text' => $faker->realText(700),
         	'category_id' => 2,
 
-        	'created_at' => DB::raw('CURRENT_TIMESTAMP'),
-            'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
+        	'created_at' => $faker->dateTimeThisMonth(),
+            'updated_at' => $faker->dateTimeThisMonth(),
         ],[
         	'title' => 'JQuery для чайников',
-        	'text' => 'Ipsum dolor sit amet, consectetur adipisicing elit. Facilis tempore odio ea voluptas perspiciatis numquam, voluptate autem unde reprehenderit facere, perferendis qui minus natus non pariatur delectus aliquam consequatur ut!',
+        	'text' => $faker->realText(700),
         	'category_id' => 1,
 
-        	'created_at' => DB::raw('CURRENT_TIMESTAMP'),
-            'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
+        	'created_at' => $faker->dateTimeThisMonth(),
+            'updated_at' => $faker->dateTimeThisMonth(),
         ]]);
     }
 }

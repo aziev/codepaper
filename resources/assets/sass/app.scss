@@ -9,7 +9,8 @@
 
 // Colors
 
-$dark: #252525;
+$dark: #333333;
+$active: #0096ff;
 
 
 //Styles
@@ -23,6 +24,7 @@ a{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     letter-spacing: 0.02em;
+    transition: color .2s;
 }
 
 p{
@@ -55,7 +57,7 @@ footer{
     }
     .info{
         font-size: 14px;
-        color: lighten(#333, 20%);
+        color: lighten($dark, 20%);
         span{
             display: inline-block;
             margin-right: 20px;
@@ -64,5 +66,13 @@ footer{
     .fa{
         display: inline-block;
         margin-right: 5px;
+    }
+    .title{
+        font-family: 'PFRegal', serif;
+        color: $dark;
+        text-decoration: none;
+        &:hover{
+            color: $active;
+        }
     }
 }

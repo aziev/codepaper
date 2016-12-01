@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class ArticleController extends Controller
 {
@@ -13,7 +14,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $articles = Article::paginate(10);
+
+        return view('index', compact('articles'));
     }
 
     /**
@@ -45,6 +48,9 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
+        $article = Article::whereId($id)->firstOrFail();
+        $article->increment('views');
+
         return view('article');
     }
 
