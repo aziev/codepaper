@@ -1227,8 +1227,9 @@ footer {
 }
 
 .mainnav a {
+  display: inline-block;
   color: #fff;
-  margin-right: 20px;
+  margin: 7px 20px 0 0;
   text-decoration: none;
 }
 
@@ -1269,6 +1270,33 @@ footer {
 
 .article .title:hover {
   color: #0096ff;
+}
+
+.single {
+  margin: 50px 0;
+}
+
+.single .image {
+  margin-bottom: 2em;
+}
+
+.single img {
+  max-width: 100%;
+}
+
+.search {
+  float: right;
+  width: 250px;
+}
+
+.search input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-family: 'PFRegal', serif;
+  border: 1px solid #666666;
+  background: transparent;
+  color: #fff;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -12,9 +12,17 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::paginate(10);
+        if ($request->has('search'))
+        {
+            $search = $request['search'];
+            $articles = Article::where('title', 'LIKE', "%$search%")->orWhere('text', 'LIKE', "%$search%")->paginate(10);
+        }
+        else
+        {
+            $articles = Article::paginate(10);
+        }
 
         return view('index', compact('articles'));
     }
@@ -51,7 +59,7 @@ class ArticleController extends Controller
         $article = Article::whereId($id)->firstOrFail();
         $article->increment('views');
 
-        return view('article');
+        return view('article', compact('article'));
     }
 
     /**

@@ -20,7 +20,9 @@ class Article extends Model
      */
     public function getPreviewText($length = 300)
     {
-        return str_limit($this->text, $length);
+        $stripped = strip_tags($this->text);
+
+        return str_limit($stripped, $length);
     }
 
     /**
@@ -31,6 +33,26 @@ class Article extends Model
     public function getDate()
     {
         return $this->created_at->format('d.m.Y');
+    }
+
+    /**
+     * Get the previous article's URL
+     *
+     * @return String
+     */
+    public function getPrevURL()
+    {
+        // URL::to(..);
+    }
+
+    /**
+     * Get the next article's URL
+     *
+     * @return String
+     */
+    public function getNextURL()
+    {
+        // URL::to(..);
     }
 
 }

@@ -12,6 +12,9 @@
             <a href="{{ URL::to('/') }}">Все статьи</a>
             <a href="">Категории</a>
             <a href="">О сайте</a>
+            <form action="{{ URL::to('/') }}" class="search">
+                <input type="text" name="search" placeholder="Поиск...">
+            </form>
         </div>
     </nav>
     @yield ('content')

@@ -3,9 +3,14 @@
 @section ('content')
 
 <div class="container">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-        <div class="row">
-            @foreach ($articles as $article)
+    <div class="row">
+        @if (Request::has('search'))
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
+                <h1>Результаты поиска по запросу "{{ Request::input('search') }}":</h1>
+            </div>
+        @endif
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            @forelse ($articles as $article)
                 <article class="article">
                     <a href='{{ URL::to("article/$article->id") }}'>
                         <img src="http://placehold.it/500x300" alt="">
@@ -24,7 +29,9 @@
                         </span>
                     </div>
                 </article>
-            @endforeach
+            @empty
+                <p>К сожалению, по вашему запросу ничего не найдено.</p>
+            @endforelse
         </div>
     </div>
 </div>

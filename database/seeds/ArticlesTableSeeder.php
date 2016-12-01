@@ -17,16 +17,22 @@ class ArticlesTableSeeder extends Seeder
 
         $faker = Faker::create();
 
+        $text = '';
+
+        foreach ($faker->paragraphs(8) as $paragraph) {
+            $text .= '<p>'. $paragraph .'</p>';
+        }
+
         DB::table('articles')->insert([[
         	'title' => 'Разработка на Laravel',
-        	'text' => $faker->realText(700),
+        	'text' => $text,
         	'category_id' => 2,
 
         	'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ],[
         	'title' => 'JQuery для чайников',
-        	'text' => $faker->realText(700),
+        	'text' => $text,
         	'category_id' => 1,
 
         	'created_at' => $faker->dateTimeThisMonth(),

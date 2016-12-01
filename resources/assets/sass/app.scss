@@ -39,8 +39,9 @@ footer{
     background: $dark;
     padding: 20px 0;
     a{
+        display: inline-block;
         color: #fff;
-        margin-right: 20px;
+        margin: 7px 20px 0 0;
         text-decoration: none;
         &:hover{
             color: darken(#fff, 20%);
@@ -74,5 +75,29 @@ footer{
         &:hover{
             color: $active;
         }
+    }
+}
+
+.single{
+    margin: 50px 0;
+    .image{
+        margin-bottom: 2em;
+    }
+    img{
+        max-width: 100%;
+    }
+}
+
+.search{
+    float: right;
+    width: 250px;
+    input{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        font-family: 'PFRegal', serif;
+        border: 1px solid lighten($dark, 20%);;
+        background: transparent;
+        color: #fff;
     }
 }
