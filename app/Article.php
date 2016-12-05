@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use App\Article;
+use App\Tag;
 use URL;
 
 class Article extends Model
@@ -16,7 +17,7 @@ class Article extends Model
 
     public function tags()
     {
-    	return $this->belongsToMany('App\Tag');
+    	return $this->belongsToMany(Tag::class);
     }
 
     /**
