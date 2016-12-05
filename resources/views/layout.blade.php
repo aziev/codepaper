@@ -9,12 +9,20 @@
 <body>
     <nav class="mainnav">
         <div class="container">
-            <a href="{{ URL::to('/') }}">Все статьи</a>
-            <a href="">Категории</a>
-            <a href="">О сайте</a>
-            <form action="{{ URL::to('/') }}" class="search">
-                <input type="text" name="search" placeholder="Поиск...">
-            </form>
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <a href="{{ URL::to('/') }}" class="logo">
+                        <img src="{{ URL::asset('img/logo.png') }}" width="100" alt="">
+                    </a>
+                    <!-- <a href="">Категории</a>
+                    <a href="">О сайте</a> -->
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <form action="{{ URL::to('/') }}" class="search">
+                        <input type="text" name="search" placeholder="Поиск...">
+                    </form>
+                </div>
+            </div>
         </div>
     </nav>
     @yield ('content')

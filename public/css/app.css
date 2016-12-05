@@ -1226,15 +1226,23 @@ footer {
   padding: 20px 0;
 }
 
-.mainnav a {
+.mainnav a:not(.logo) {
   display: inline-block;
+  vertical-align: top;
   color: #fff;
-  margin: 7px 20px 0 0;
+  margin: 8px 20px 0 0;
   text-decoration: none;
 }
 
-.mainnav a:hover {
+.mainnav a:not(.logo):hover {
   color: #cccccc;
+}
+
+.logo {
+  margin: 3px 20px 0 0;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
 }
 
 .article {
@@ -1285,18 +1293,28 @@ footer {
 }
 
 .search {
-  float: right;
-  width: 250px;
+  padding-top: 1px;
 }
 
 .search input {
+  float: right;
   width: 100%;
+  max-width: 300px;
   box-sizing: border-box;
   padding: 5px 10px;
   font-family: 'PFRegal', serif;
   border: 1px solid #666666;
   background: transparent;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-bottom: 20px;
+  }
+  .search input {
+    float: left;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

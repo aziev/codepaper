@@ -6,8 +6,6 @@
     <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <article class="single">
-            {{ $article->getClosestURL() }}
-            {{ $article->getClosestURL(false) }}
                 <h1>{{ $article->title }}</h1>
                 <div class="image">
                     <img src="http://placehold.it/500x300" alt="">
