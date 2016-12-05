@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
+use App\Article;
+use URL;
 
 class Article extends Model
 {
@@ -36,23 +38,20 @@ class Article extends Model
     }
 
     /**
-     * Get the previous article's URL
+     * Get prev or next article's URL
      *
-     * @return String
+     * @param boolean $isPrev
+     * @return String | null
      */
-    public function getPrevURL()
+    public function getClosestURL($isPrev = true)
     {
-        // URL::to(..);
-    }
+    	$prev_article = Article::where('created_at', $isPrev ? '<' : '>', $this->created_at)->latest()->first();
 
-    /**
-     * Get the next article's URL
-     *
-     * @return String
-     */
-    public function getNextURL()
-    {
-        // URL::to(..);
-    }
+    	if (!$prev_article)
+    	{
+    		return null;
+    	}
 
+    	return URL::to("/article/$prev_article->id");
+    }
 }
