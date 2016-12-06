@@ -1200,7 +1200,7 @@ hr {
 }
 
 body {
-  font-family: 'PFRegal', serif;
+  font-family: "PFRegal", serif;
   font-size: 16px;
 }
 
@@ -1242,6 +1242,15 @@ footer {
   display: inline-block;
   vertical-align: top;
   text-decoration: none;
+  color: #fff;
+  font-size: 30px;
+  font-family: "PFRegal", serif;
+  font-weight: 700;
+}
+
+.logo:hover, .logo:focus {
+  text-decoration: none;
+  color: #0096ff;
 }
 
 .article {
@@ -1270,7 +1279,7 @@ footer {
 }
 
 .article .title {
-  font-family: 'PFRegal', serif;
+  font-family: "PFRegal", serif;
   color: #333333;
   text-decoration: none;
 }
@@ -1301,7 +1310,7 @@ footer {
   max-width: 300px;
   box-sizing: border-box;
   padding: 5px 10px;
-  font-family: 'PFRegal', serif;
+  font-family: "PFRegal", serif;
   border: 1px solid #666666;
   background: transparent;
   color: #fff;

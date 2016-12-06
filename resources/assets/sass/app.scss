@@ -12,11 +12,15 @@
 $dark: #333333;
 $active: #0096ff;
 
+// Fonts
+
+$serif: 'PFRegal', serif;
+
 
 //Styles
 
 body{
-    font-family: 'PFRegal', serif;
+    font-family: $serif;
     font-size: 16px;
 }
 
@@ -55,6 +59,14 @@ footer{
     display: inline-block;
     vertical-align: top;
     text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    font-family: $serif;
+    font-weight: 700;
+    &:hover, &:focus{
+        text-decoration: none;
+        color: $active;
+    }
 }
 
 .article{
@@ -77,7 +89,7 @@ footer{
         margin-right: 5px;
     }
     .title{
-        font-family: 'PFRegal', serif;
+        font-family: $serif;
         color: $dark;
         text-decoration: none;
         &:hover{
@@ -104,7 +116,7 @@ footer{
         max-width: 300px;
         box-sizing: border-box;
         padding: 5px 10px;
-        font-family: 'PFRegal', serif;
+        font-family: $serif;
         border: 1px solid lighten($dark, 20%);
         background: transparent;
         color: #fff;

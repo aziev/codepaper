@@ -11,9 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-9">
-                    <a href="{{ URL::to('/') }}" class="logo">
-                        <img src="{{ URL::asset('img/logo.png') }}" width="100" alt="">
-                    </a>
+                    <a href="{{ URL::to('/') }}" class="logo">CodePaper</a>
                     <!-- <a href="">Категории</a>
                     <a href="">О сайте</a> -->
                 </div>
