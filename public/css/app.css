@@ -1302,7 +1302,7 @@ footer {
 }
 
 .search {
-  padding-top: 1px;
+  padding-top: 6px;
 }
 
 .search input {
@@ -1314,7 +1314,15 @@ footer {
   font-family: "PFRegal", serif;
   border: 1px solid #666666;
   background: transparent;
+  color: #ddd;
+}
+
+.insensible {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 16px;
   color: #fff;
+  margin: 16px 0 0;
 }
 
 aside {
@@ -1347,6 +1355,9 @@ aside a:hover {
   }
   .search input {
     float: left;
+  }
+  .insensible {
+    display: none;
   }
 }
 

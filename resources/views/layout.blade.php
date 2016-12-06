@@ -12,6 +12,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-9">
                     <a href="{{ URL::to('/') }}" class="logo">CodePaper</a>
+                    <h1 class="insensible">Статьи о программировании</h1>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <form action="{{ URL::to('/') }}" class="search">
