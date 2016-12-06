@@ -35,8 +35,6 @@
                         <a href="">{{ $category->title }} ({{ $category->getArticlesCount() }})</a>
                     @endforeach
                 </aside>
-            </div>
-            <div class="col-xs-12 col-md-3 col-md-offset-1">
                 <aside>
                     <h3>Теги</h3>
                     @foreach ($tags as $tag)
