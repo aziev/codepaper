@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>{{ config('app.name') }}</title>
+    <title>@yield ('title') {{ config('app.name') }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 </head>
@@ -12,8 +12,6 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-9">
                     <a href="{{ URL::to('/') }}" class="logo">CodePaper</a>
-                    <!-- <a href="">Категории</a>
-                    <a href="">О сайте</a> -->
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <form action="{{ URL::to('/') }}" class="search">
