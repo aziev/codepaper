@@ -11,4 +11,14 @@ class Category extends Model
     {
     	return $this->hasMany(Article::class);
     }
+
+    /**
+     * Get count of articles related to the category
+     *
+     * @return integer
+     */
+    public function getArticlesCount()
+    {
+        return $this->articles()->count();
+    }
 }

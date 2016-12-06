@@ -328,13 +328,12 @@ textarea {
 }
 
 a {
-  color: #337ab7;
+  color: #0096ff;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #23527c;
   text-decoration: underline;
 }
 
@@ -1306,6 +1305,30 @@ footer {
   border: 1px solid #666666;
   background: transparent;
   color: #fff;
+}
+
+aside {
+  border: 1px solid #ebebeb;
+  margin-top: 50px;
+  padding: 10px 15px;
+}
+
+aside h3 {
+  margin: 0 0 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 16px;
+}
+
+aside a {
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #555;
+}
+
+aside a:hover {
+  color: #0096ff;
 }
 
 @media (max-width: 768px) {
