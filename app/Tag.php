@@ -19,7 +19,6 @@ class Tag extends Model
      */
     public function getArticlesCount()
     {
-        // todo
-        return 13;
+       return $this->articles()->count();
     }
 }
