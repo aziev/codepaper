@@ -19,11 +19,14 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->text('text');
             $table->integer('views')->unsigned()->default(0);
+            $table->string('original_url')->nullable();
             $table->integer('category_id')->unsigned();
+            $table->integer('user_id')->unsigned();
 
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('articles');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

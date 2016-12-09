@@ -14,6 +14,14 @@
         <span class="comments">
             <i class="fa fa-comments-o" aria-hidden="true"></i>20
         </span>
+        <span class="link pull-right">
+            <i class="fa fa-link" aria-hidden="true"></i>
+            <a href="{{ $article->original_url }}" target="_blank" rel="noopener noreferer">{{ $article->getOriginalHost() }}</a>
+        </span>
+        <span class="author pull-right">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <a href="https://github.com/{{ $article->user->name }}" target="_blank" rel="noopener noreferer">{{ $article->user->name }}</a>
+        </span>
     </div>
     <div class="image">
         <img src="http://placehold.it/700x400" alt="">

@@ -1293,6 +1293,12 @@ footer {
   margin-right: 20px;
 }
 
+.article .info span.pull-right,
+.single .info span.pull-right {
+  margin-left: 20px;
+  margin-right: 0;
+}
+
 .article .fa,
 .single .fa {
   display: inline-block;

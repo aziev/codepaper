@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use App\Article;
 use App\Tag;
+use App\User;
 use URL;
 
 class Article extends Model
@@ -18,6 +19,11 @@ class Article extends Model
     public function tags()
     {
     	return $this->belongsToMany(Tag::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     /**
@@ -59,5 +65,18 @@ class Article extends Model
     	}
 
     	return URL::to("/article/$prev_article->id");
+    }
+
+    /**
+     * Get host name of the article's original URL
+     *
+     * @return String
+     */
+    public function getOriginalHost()
+    {
+        $parsed = parse_url($this->original_url);
+        $host = $parsed['host'];
+
+        return ucfirst($host);
     }
 }

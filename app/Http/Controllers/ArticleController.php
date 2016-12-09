@@ -56,7 +56,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::whereId($id)->firstOrFail();
+        $article = Article::whereId($id)->with('user')->firstOrFail();
         $article->increment('views');
 
         return view('article', compact('article'));
