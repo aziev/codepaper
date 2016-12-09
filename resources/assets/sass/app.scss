@@ -139,16 +139,18 @@ aside{
     h3{
         margin: 0 0 20px;
         padding: 10px 0;
-        border-bottom: 1px solid #ebebeb;
+        border-bottom: 1px dashed lighten($dark, 50%);
         font-size: 16px;
     }
     a{
         display: block;
-        margin: 10px 0;
+        margin: 0 -15px;
+        padding: 10px 15px;
         text-decoration: none;
-        color: #555;
+        color: $active;
         &:hover{
-            color: $active;
+            color: darken($active, 20%);
+            background: #ebebeb;
         }
     }
 }

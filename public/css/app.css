@@ -332,11 +332,6 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -1334,19 +1329,21 @@ aside {
 aside h3 {
   margin: 0 0 20px;
   padding: 10px 0;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px dashed #b3b3b3;
   font-size: 16px;
 }
 
 aside a {
   display: block;
-  margin: 10px 0;
+  margin: 0 -15px;
+  padding: 10px 15px;
   text-decoration: none;
-  color: #555;
+  color: #0096ff;
 }
 
 aside a:hover {
-  color: #0096ff;
+  color: #005a99;
+  background: #ebebeb;
 }
 
 @media (max-width: 768px) {
