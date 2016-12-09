@@ -77,18 +77,6 @@ footer{
         max-width: 100%;
         margin-top: 20px;
     }
-    .info{
-        font-size: 14px;
-        color: lighten($dark, 20%);
-        span{
-            display: inline-block;
-            margin-right: 20px;
-        }
-    }
-    .fa{
-        display: inline-block;
-        margin-right: 5px;
-    }
     .title{
         font-family: $serif;
         color: $dark;
@@ -102,10 +90,26 @@ footer{
 .single{
     margin: 50px 0;
     .image{
-        margin-bottom: 2em;
+        margin: 1em 0 2em;
     }
     img{
         max-width: 100%;
+    }
+}
+
+.article,
+.single{
+    .info{
+        font-size: 14px;
+        color: lighten($dark, 20%);
+        span{
+            display: inline-block;
+            margin-right: 20px;
+        }
+    }
+    .fa{
+        display: inline-block;
+        margin-right: 5px;
     }
 }
 

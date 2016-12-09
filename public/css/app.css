@@ -1259,21 +1259,6 @@ footer {
   margin-top: 20px;
 }
 
-.article .info {
-  font-size: 14px;
-  color: #666666;
-}
-
-.article .info span {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.article .fa {
-  display: inline-block;
-  margin-right: 5px;
-}
-
 .article .title {
   font-family: "PFRegal", serif;
   color: #333333;
@@ -1289,11 +1274,29 @@ footer {
 }
 
 .single .image {
-  margin-bottom: 2em;
+  margin: 1em 0 2em;
 }
 
 .single img {
   max-width: 100%;
+}
+
+.article .info,
+.single .info {
+  font-size: 14px;
+  color: #666666;
+}
+
+.article .info span,
+.single .info span {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.article .fa,
+.single .fa {
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .search {
