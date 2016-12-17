@@ -8,7 +8,7 @@
 @forelse ($articles as $article)
     <article class="article">
         <a href='{{ URL::to("article/$article->id") }}'>
-            <img src="http://placehold.it/700x400" alt="">
+            <img src="{{ $article->picture->path }}" alt="">
         </a>
         <a href='{{ URL::to("article/$article->id") }}' class="title">
             <h2>{{ $article->title }}</h2>

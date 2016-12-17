@@ -24,7 +24,7 @@
         </span>
     </div>
     <div class="image">
-        <img src="http://placehold.it/700x400" alt="">
+        <img src="{{ $article->picture->path }}" alt="">
     </div>
     <div class="text">{!! $article->text !!}</div>
 </article>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use Image;
+use File;
 
 class ArticleController extends Controller
 {
@@ -34,7 +36,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.article');
     }
 
     /**
@@ -45,7 +47,39 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fields = array_merge($request->only(['title', 'text', 'original_url', 'category_id']), [
+            'user_id' => 1,//$request->user->id,
+        ]);
+
+        $article = Article::create($fields);
+
+        if ($request->file('image') && $request->file('image')->isValid())
+        {
+            $image = Image::make($request['image']);
+
+            $path = 'uploads/images/' . date("Y") .'/'. date('m');
+            $extension= File::extension($request->file('image')->getClientOriginalName());
+            $filename = uniqid() .'.'. $extension;
+
+            if (!is_dir($path)){
+                mkdir(public_path($path), 0755, true);
+            }
+
+            $path .= '/';
+
+            if ($image->width() > 700*2)
+            {
+                $image->widen(700*2);
+            }
+
+            $image->save($path . $filename);
+
+            $article->picture()->create([
+                'path' => $path . $filename,
+            ]);
+        }
+
+        return redirect("article/$article->id");
     }
 
     /**

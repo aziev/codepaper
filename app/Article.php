@@ -7,10 +7,13 @@ use App\Category;
 use App\Article;
 use App\Tag;
 use App\User;
+use App\Picture;
 use URL;
 
 class Article extends Model
 {
+    protected $fillable = ['title', 'text', 'original_url', 'category_id', 'user_id'];
+
     public function category()
     {
     	return $this->belongsTo(Category::class);
@@ -24,6 +27,11 @@ class Article extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function picture()
+    {
+        return $this->morphOne(Picture::class, 'picturable');
     }
 
     /**
@@ -74,6 +82,10 @@ class Article extends Model
      */
     public function getOriginalHost()
     {
+        if (filter_var($this->original_url, FILTER_VALIDATE_URL) === FALSE) {
+            return null;
+        }
+
         $parsed = parse_url($this->original_url);
         $host = $parsed['host'];
 

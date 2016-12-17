@@ -12,4 +12,7 @@
 */
 
 Route::get('/', 'ArticleController@index');
-Route::get('/article/{id}', 'ArticleController@show');
+// Route::get('/article/{id}', 'ArticleController@show');
+Route::resource('article', 'ArticleController', [
+    'only' => ['create', 'store', 'show'],
+]);
