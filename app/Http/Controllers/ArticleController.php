@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Picture;
 use Image;
-use File;
+// use File;
+use URL;
 
 class ArticleController extends Controller
 {
@@ -59,27 +61,10 @@ class ArticleController extends Controller
 
         if ($request->file('image') && $request->file('image')->isValid())
         {
-            $image = Image::make($request['image']);
-
-            $path = 'uploads/images/' . date("Y") .'/'. date('m');
-            $extension= File::extension($request->file('image')->getClientOriginalName());
-            $filename = uniqid() .'.'. $extension;
-
-            if (!is_dir($path)){
-                mkdir(public_path($path), 0755, true);
-            }
-
-            $path .= '/';
-
-            if ($image->width() > 700*2)
-            {
-                $image->widen(700*2);
-            }
-
-            $image->save($path . $filename);
+            $path = Picture::storeFile($request['image']);
 
             $article->picture()->create([
-                'path' => $path . $filename,
+                'path' => $path,
             ]);
         }
 
@@ -108,7 +93,12 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->authorize('update', Article::class);
+
+        $article = Article::whereId($id)->firstOrFail();
+        $action = URL::to("article/$article->id");
+
+        return view('admin.article', compact('article', 'action'));
     }
 
     /**
@@ -120,7 +110,30 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->authorize('update', Article::class);
+
+        $article = Article::whereId($id)->firstOrFail();
+
+        $article->update($request->all());
+
+        if ($request->file('image') && $request->file('image')->isValid())
+        {
+            $path = Picture::storeFile($request['image']);
+
+            if ($path)
+            {
+                if (null !== $article->picture)
+                {
+                    $article->picture->delete();
+                }
+
+                $article->picture()->create([
+                    'path' => $path,
+                ]);
+            }
+        }
+
+        return redirect("article/$article->id");
     }
 
     /**
@@ -131,6 +144,11 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->authorize('delete', Article::class);
+
+        $article = Article::whereId($id)->firstOrFail();
+        $article->delete();
+
+        return redirect("/");
     }
 }

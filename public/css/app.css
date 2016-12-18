@@ -123,12 +123,13 @@ template {
   display: none;
 }
 
-a {
+a, .inline-form button {
   background-color: transparent;
 }
 
-a:active,
-a:hover {
+a:active, .inline-form button:active,
+a:hover,
+.inline-form button:hover {
   outline: 0;
 }
 
@@ -327,12 +328,12 @@ textarea {
   line-height: inherit;
 }
 
-a {
+a, .inline-form button {
   color: #0096ff;
   text-decoration: none;
 }
 
-a:focus {
+a:focus, .inline-form button:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -1199,7 +1200,7 @@ body {
   font-size: 16px;
 }
 
-a {
+a, .inline-form button {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   letter-spacing: 0.02em;
@@ -1221,7 +1222,7 @@ footer {
   padding: 20px 0;
 }
 
-.mainnav a:not(.logo) {
+.mainnav a:not(.logo), .mainnav .inline-form button:not(.logo), .inline-form .mainnav button:not(.logo) {
   display: inline-block;
   vertical-align: top;
   color: #fff;
@@ -1229,7 +1230,7 @@ footer {
   text-decoration: none;
 }
 
-.mainnav a:not(.logo):hover {
+.mainnav a:not(.logo):hover, .mainnav .inline-form button:not(.logo):hover, .inline-form .mainnav button:not(.logo):hover {
   color: #cccccc;
 }
 
@@ -1342,7 +1343,7 @@ aside h3 {
   font-size: 16px;
 }
 
-aside a {
+aside a, aside .inline-form button, .inline-form aside button {
   display: block;
   margin: 0 -15px;
   padding: 10px 15px;
@@ -1350,9 +1351,22 @@ aside a {
   color: #0096ff;
 }
 
-aside a:hover {
+aside a:hover, aside .inline-form button:hover, .inline-form aside button:hover {
   color: #005a99;
   background: #ebebeb;
+}
+
+.inline-form {
+  display: inline-block;
+}
+
+.inline-form button {
+  border: none;
+  background: none;
+}
+
+.space-right {
+  margin-right: 20px;
 }
 
 @media (max-width: 768px) {

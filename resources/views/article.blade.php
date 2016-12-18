@@ -5,6 +5,20 @@
 @section ('content')
 
 <article class="single">
+    @can('update', $article)
+        <a href='{{ URL::to("article/$article->id/edit") }}' class="space-right">
+            <i class="fa fa-pencil" aria-hidden="true"></i>Редактировать
+        </a>
+    @endcan
+    @can('delete', $article)
+        <form action='{{ URL::to("article/$article->id") }}' method="POST" class="inline-form">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <button onclick="return confirm('Вы уверены что хотите удалить статью?');">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>Удалить
+            </button>
+        </form>
+    @endcan
     <h1>{{ $article->title }}</h1>
     <div class="info">
         <span class="date">{{ $article->getDate() }}</span>

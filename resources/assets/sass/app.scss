@@ -163,6 +163,19 @@ aside{
     }
 }
 
+.inline-form{
+    display: inline-block;
+    button{
+        border: none;
+        background: none;
+        @extend a;
+    }
+}
+
+.space-right{
+    margin-right: 20px;
+}
+
 @media (max-width: 768px){
 
     .logo{
