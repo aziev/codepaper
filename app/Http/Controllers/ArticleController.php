@@ -36,6 +36,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Article::class);
+
         return view('admin.article');
     }
 
@@ -47,6 +49,8 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Article::class);
+        
         $fields = array_merge($request->only(['title', 'text', 'original_url', 'category_id']), [
             'user_id' => 1,//$request->user->id,
         ]);

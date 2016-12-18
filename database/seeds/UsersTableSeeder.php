@@ -21,12 +21,14 @@ class UsersTableSeeder extends Seeder
             'name' => 'aziev',
             'email' => 'mikail.aziev@gmail.com',
             'password' => bcrypt(123),
+            'is_admin' => true,
             'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ],[
             'name' => 'teslaAi',
             'email' => 'storona77@gmail.com',
             'password' => bcrypt(123),
+            'is_admin' => true,
             'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ]]);

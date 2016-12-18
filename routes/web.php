@@ -16,3 +16,7 @@ Route::get('/', 'ArticleController@index');
 Route::resource('article', 'ArticleController', [
     'only' => ['create', 'store', 'show'],
 ]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
