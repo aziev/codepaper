@@ -16,15 +16,15 @@ class ArticleController extends Controller
      */
     public function index(Request $request)
     {
+        $builder = Article::latest();
+
         if ($request->has('search'))
         {
             $search = $request['search'];
-            $articles = Article::where('title', 'LIKE', "%$search%")->orWhere('text', 'LIKE', "%$search%")->paginate(10);
+            $builder->where('title', 'LIKE', "%$search%")->orWhere('text', 'LIKE', "%$search%");
         }
-        else
-        {
-            $articles = Article::paginate(10);
-        }
+        
+        $articles = $builder->paginate(10);
 
         return view('index', compact('articles'));
     }
