@@ -43,4 +43,14 @@
     <div class="text">{!! $article->text !!}</div>
 </article>
 
+<div id="vk_comments"></div>
+<script src="https://vk.com/js/api/openapi.js?136"></script>
+<script>
+    VK.init({
+        apiId: 5784437,
+        onlyWidgets: true
+    });
+    VK.Widgets.Comments('vk_comments');
+</script>
+
 @stop
