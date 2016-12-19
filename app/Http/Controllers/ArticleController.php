@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Picture;
+use App\Category;
 use Image;
 // use File;
 use URL;
@@ -16,9 +17,15 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, $category_slug = null)
     {
         $builder = Article::latest();
+
+        if ($category_slug)
+        {
+            $category = Category::whereSlug($category_slug)->firstOrFail(['id']);
+            $builder->where('category_id', $category->id);
+        }
 
         if ($request->has('search'))
         {

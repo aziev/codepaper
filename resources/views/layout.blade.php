@@ -32,7 +32,7 @@
                 <aside>
                     <h3>Категории</h3>
                     @foreach ($categories as $category)
-                        <a href="">{{ $category->title }} ({{ $category->getArticlesCount() }})</a>
+                        <a href='{{ URL::to("category/$category->slug") }}'>{{ $category->title }} ({{ $category->getArticlesCount() }})</a>
                     @endforeach
                 </aside>
                 <aside>

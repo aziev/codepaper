@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'ArticleController@index');
+Route::get('category/{slug}', 'ArticleController@index');
 Route::resource('article', 'ArticleController', [
     'except' => ['index'],
 ]);

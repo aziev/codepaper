@@ -16,12 +16,12 @@ class CategoriesTableSeeder extends Seeder
 
         DB::table('categories')->insert([[
         	'title' => 'Backend',
-
+            'slug' => 'backend',
         	'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         ],[
         	'title' => 'Frontend',
-
+            'slug' => 'frontend',
         	'created_at' => DB::raw('CURRENT_TIMESTAMP'),
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         ]]);
