@@ -38,10 +38,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         // $this->authorize('create', Category::class);
-        
-        $fields = array_merge($request->only(['title', 'slug',]));
 
-        $category = Category::create($fields);
+        $category = Category::create($request->only(['title', 'slug']));
 
         return redirect("/");
     }
