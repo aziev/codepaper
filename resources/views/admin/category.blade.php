@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h1>Создание категории</h1>
-            <form action="{{ $action ?? URL::to('category') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ $action ?? URL::to('categories') }}" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="">Заголовок</label>
