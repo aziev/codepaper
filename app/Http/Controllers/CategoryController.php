@@ -14,7 +14,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::latest()->paginate(30);
+
+        return view('admin.list', [
+            'items' => $categories,
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        // $this->authorize('create', Category::class);
+        $this->authorize('create', Category::class);
 
         return view('admin.category');
     }
@@ -37,7 +41,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->authorize('create', Category::class);
+        $this->authorize('create', Category::class);
 
         $category = Category::create($request->only(['title', 'slug']));
 

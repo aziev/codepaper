@@ -17,9 +17,7 @@ Route::resource('article', 'ArticleController', [
     'except' => ['index'],
 ]);
 
-Route::resource('categories', 'CategoryController', [
-    'except' => ['index'],
-]);
+Route::resource('categories', 'CategoryController');
 
 Auth::routes();
 
