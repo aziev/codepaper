@@ -1270,6 +1270,10 @@ footer {
   color: #0096ff;
 }
 
+.article:not(:last-of-type) {
+  margin-bottom: 80px;
+}
+
 .single {
   margin: 50px 0;
 }
@@ -1334,13 +1338,32 @@ aside {
   border: 1px solid #ebebeb;
   margin-top: 50px;
   padding: 10px 15px;
+  border-radius: 4px;
 }
 
 aside h3 {
   margin: 0 0 20px;
-  padding: 10px 0;
-  border-bottom: 1px dashed #b3b3b3;
-  font-size: 16px;
+  padding: 10px 0 8px;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: #666;
+  position: relative;
+}
+
+aside h3:after {
+  display: block;
+  content: '';
+  height: 1px;
+  width: 120px;
+  background: #0096ff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
 }
 
 aside a, aside .inline-form button, .inline-form aside button {
@@ -1348,12 +1371,18 @@ aside a, aside .inline-form button, .inline-form aside button {
   margin: 0 -15px;
   padding: 10px 15px;
   text-decoration: none;
-  color: #0096ff;
+  color: #005a99;
 }
 
 aside a:hover, aside .inline-form button:hover, .inline-form aside button:hover {
-  color: #005a99;
+  color: #0096ff;
   background: #ebebeb;
+}
+
+aside .count {
+  float: right;
+  color: #999;
+  font-size: 14px;
 }
 
 .inline-form {

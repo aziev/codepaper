@@ -15,6 +15,7 @@ $active: #0096ff;
 // Fonts
 
 $serif: 'PFRegal', serif;
+$sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 //Styles
@@ -25,7 +26,7 @@ body{
 }
 
 a{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: $sans;
     font-size: 14px;
     letter-spacing: 0.02em;
     transition: color .2s;
@@ -84,6 +85,9 @@ footer{
         &:hover{
             color: $active;
         }
+    }
+    &:not(:last-of-type){
+        margin-bottom: 80px;
     }
 }
 
@@ -144,22 +148,45 @@ aside{
     border: 1px solid #ebebeb;
     margin-top: 50px;
     padding: 10px 15px;
+    border-radius: 4px;
     h3{
         margin: 0 0 20px;
-        padding: 10px 0;
-        border-bottom: 1px dashed lighten($dark, 50%);
-        font-size: 16px;
+        padding: 10px 0 8px;
+        // border-bottom: 2px solid $active;
+        text-transform: uppercase;
+        font-family: $sans;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-align: center;
+        color: #666;
+        position: relative;
+        &:after{
+            display: block;
+            content: '';
+            height: 1px;
+            width: 120px;
+            background: $active;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
     }
     a{
         display: block;
         margin: 0 -15px;
         padding: 10px 15px;
         text-decoration: none;
-        color: $active;
+        color: darken($active, 20%);
         &:hover{
-            color: darken($active, 20%);
+            color: $active;
             background: #ebebeb;
         }
+    }
+    .count{
+        float: right;
+        color: #999;
+        font-size: 14px;
     }
 }
 
