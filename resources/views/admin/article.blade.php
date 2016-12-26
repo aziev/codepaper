@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Текст</label>
-                    <textarea class="form-control" name="text" required="">{{ $article->text ?? '' }}</textarea>
+                    <textarea class="form-control" name="text" id="editor1" required="">{{ $article->text ?? '' }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="">Ссылка на оригинал</label>

@@ -10,5 +10,9 @@
     @yield ('content')
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+    <script>
+        var editor = CKEDITOR.replace( 'editor1' );
+</script>
 </body>
 </html>
