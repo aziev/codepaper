@@ -25,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
 
         Picture::deleting(function($picture){
             File::delete($picture->getOriginal('path'));
+            File::delete($picture->getPath('vk'));
+            File::delete($picture->getPath('fb'));
+            File::delete($picture->getPath('2x'));
         });
     }
 

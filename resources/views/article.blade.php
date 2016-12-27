@@ -2,8 +2,16 @@
 
 @section ('title', $article->title . ' &mdash;')
 
-@section ('content')
+@section ('meta')
+<meta property="og:url" content="{{ Request::url() }}">
+<meta property="og:title" content="{{ $article->title }}">
+<meta property="og:description" content="{{ $article->getPreviewText() }}">
+<meta property="image" content="{{ $article->picture->getPath('vk') }}"> <!-- VK -->
+<meta property="og:image" content="{{ $article->picture->getPath('fb') }}"> <!-- FB -->
+<meta property="fb:app_id" content="729337813885152">
+@stop
 
+@section ('content')
 <article class="single">
     @can('update', $article)
         <a href='{{ URL::to("article/$article->id/edit") }}' class="space-right">
@@ -52,5 +60,4 @@
     });
     VK.Widgets.Comments('vk_comments');
 </script>
-
 @stop
