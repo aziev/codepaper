@@ -6,8 +6,8 @@
 <meta property="og:url" content="{{ Request::url() }}">
 <meta property="og:title" content="{{ $article->title }}">
 <meta property="og:description" content="{{ $article->getPreviewText() }}">
-<meta property="image" content="{{ $article->picture->getPath('vk') }}"> <!-- VK -->
-<meta property="og:image" content="{{ $article->picture->getPath('fb') }}"> <!-- FB -->
+<meta property="image" content="{{ URL::asset($article->picture->getPath('vk')) }}"> <!-- VK -->
+<meta property="og:image" content="{{ URL::asset($article->picture->getPath('fb')) }}"> <!-- FB -->
 <meta property="fb:app_id" content="729337813885152">
 @stop
 
