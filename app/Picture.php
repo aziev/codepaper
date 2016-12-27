@@ -68,8 +68,6 @@ class Picture extends Model
             case 'fb': $path .= '-1200x630'; break;
         }
 
-        dd($pathinfo);
-
         $path .= '.' . $pathinfo['extension'];
 
         return $path;
