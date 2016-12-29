@@ -1410,4 +1410,30 @@ aside .count {
   }
 }
 
+.pagination {
+	text-align: center;
+	margin-top: 130px;
+}
+
+.pagination li {
+	display: inline;
+	font-size: 18px;
+}
+
+.pagination .active {
+	padding: 0 10px;
+	font-weight: bold;
+}
+
+.pagination a {
+	font-size: 18px;
+	padding: 5px 8px;
+	font-family: "PFRegal", serif;
+	border-radius: 5px;
+}
+
+.pagination a:hover {
+	background: #efefef;
+}
+
 /*# sourceMappingURL=app.css.map */
