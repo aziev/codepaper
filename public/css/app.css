@@ -1398,6 +1398,32 @@ aside .count {
   margin-right: 20px;
 }
 
+.pagination {
+  text-align: center;
+  margin-top: 130px;
+}
+
+.pagination li {
+  display: inline;
+  font-size: 18px;
+}
+
+.pagination .active {
+  padding: 0 10px;
+  font-weight: bold;
+}
+
+.pagination a, .pagination .inline-form button, .inline-form .pagination button {
+  font-size: 18px;
+  padding: 5px 8px;
+  font-family: "PFRegal", serif;
+  border-radius: 5px;
+}
+
+.pagination a:hover, .pagination .inline-form button:hover, .inline-form .pagination button:hover {
+  background: #efefef;
+}
+
 @media (max-width: 768px) {
   .logo {
     margin-bottom: 20px;
@@ -1408,32 +1434,6 @@ aside .count {
   .insensible {
     display: none;
   }
-}
-
-.pagination {
-	text-align: center;
-	margin-top: 130px;
-}
-
-.pagination li {
-	display: inline;
-	font-size: 18px;
-}
-
-.pagination .active {
-	padding: 0 10px;
-	font-weight: bold;
-}
-
-.pagination a {
-	font-size: 18px;
-	padding: 5px 8px;
-	font-family: "PFRegal", serif;
-	border-radius: 5px;
-}
-
-.pagination a:hover {
-	background: #efefef;
 }
 
 /*# sourceMappingURL=app.css.map */
