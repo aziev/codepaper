@@ -50,7 +50,14 @@
     </div>
     <div class="text">{!! $article->text !!}</div>
 </article>
-
+<div class="sharing">
+    <script src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
+    <script>
+        <!--
+        document.write(VK.Share.button(false, {type: 'round', text: 'Поделиться'}));
+        -->
+    </script>
+</div>
 <div id="vk_comments"></div>
 <script src="https://vk.com/js/api/openapi.js?136"></script>
 <script>
