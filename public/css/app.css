@@ -1337,46 +1337,58 @@ footer {
 aside {
   border: 1px solid #ebebeb;
   margin-top: 50px;
-  padding: 10px 15px;
-  border-radius: 4px;
 }
 
 aside h3 {
-  margin: 0 0 20px;
-  padding: 10px 0 8px;
-  text-transform: uppercase;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-align: center;
+  margin: -1px -1px 0;
+  padding: 12px 15px 10px;
+  font-size: 16px;
   color: #666;
   position: relative;
-}
-
-aside h3:after {
-  display: block;
-  content: '';
-  height: 1px;
-  width: 120px;
-  background: #0096ff;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-  transform: translate(-50%);
+  background: #f0f0f0;
+  border-top: 2px solid #0096ff;
+  font-weight: 900;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 aside a, aside .inline-form button, .inline-form aside button {
+  position: relative;
   display: block;
-  margin: 0 -15px;
   padding: 10px 15px;
   text-decoration: none;
   color: #005a99;
+  border-top: 1px solid #f0f0f0;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+aside a:before, aside .inline-form button:before, .inline-form aside button:before {
+  position: absolute;
+  left: -1px;
+  top: 0;
+  display: block;
+  content: '';
+  width: 2px;
+  height: 100%;
+  background: #0096ff;
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
 }
 
 aside a:hover, aside .inline-form button:hover, .inline-form aside button:hover {
   color: #0096ff;
-  background: #ebebeb;
+  background: #fafafa;
+}
+
+aside a:hover:before, aside .inline-form button:hover:before, .inline-form aside button:hover:before {
+  opacity: 1;
+}
+
+aside a:first-of-type, aside .inline-form button:first-of-type, .inline-form aside button:first-of-type {
+  border-top: none;
 }
 
 aside .count {
