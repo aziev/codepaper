@@ -1,3 +1,3 @@
-# Particles
+# CodePaper
 
-This is programmer articles website.
+Website for publishing related to IT articles. Based on Laravel PHP Framework.
