@@ -42,7 +42,7 @@
         </span>
         <span class="author pull-right">
             <i class="fa fa-user" aria-hidden="true"></i>
-            <a href="https://github.com/{{ $article->user->name }}" target="_blank" rel="noopener noreferer">{{ $article->user->name }}</a>
+            <a href="{{ $article->user->github }}" target="_blank" rel="noopener noreferer">{{ $article->user->name }}</a>
         </span>
     </div>
     <div class="image">

@@ -22,6 +22,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'mikail.aziev@gmail.com',
             'password' => bcrypt(123),
             'is_admin' => true,
+            'github' => 'https://github.com/aziev',
             'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ],[
@@ -29,6 +30,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'storona77@gmail.com',
             'password' => bcrypt(123),
             'is_admin' => true,
+            'github' => 'https://github.com/teslaAi',
             'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ]]);
