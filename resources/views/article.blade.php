@@ -34,7 +34,7 @@
             <i class="fa fa-eye" aria-hidden="true"></i>{{ $article->views }}
         </span>
         <span class="comments">
-            <i class="fa fa-comments-o" aria-hidden="true"></i>20
+            <i class="fa fa-comments-o" aria-hidden="true"></i>{{ $article->getCommentsCount() }}
         </span>
         <span class="link pull-right">
             <i class="fa fa-link" aria-hidden="true"></i>

@@ -91,4 +91,23 @@ class Article extends Model
 
         return ucfirst($host);
     }
+
+    /**
+     * Get related to the article comments count
+     *
+     * @return integer
+     */
+    public function getCommentsCount()
+    {
+        // WARNING: THIS METHOD NEEDS TO BE CACHED
+        $api_id = "5784437";
+        $api_method = "widgets.getComments";
+        $url = URL::to("article/$this->id");
+
+        $api_url = "https://api.vk.com/method/$api_method?url=$url&widget_api_id=$api_id";
+
+        $result = json_decode(file_get_contents($api_url));
+
+        return $result->response->count;
+    }
 }
