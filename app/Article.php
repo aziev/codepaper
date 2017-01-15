@@ -9,6 +9,7 @@ use App\Tag;
 use App\User;
 use App\Picture;
 use URL;
+use Illuminate\Support\Facades\Cache;
 
 class Article extends Model
 {
@@ -99,7 +100,13 @@ class Article extends Model
      */
     public function getCommentsCount()
     {
-        // WARNING: THIS METHOD NEEDS TO BE CACHED
+        $key = 'article-' . $this->id . '-comments-count';
+
+        if (Cache::has($key))
+        {
+            return Cache::get($key);
+        }
+
         $api_id = "5784437";
         $api_method = "widgets.getComments";
         $url = URL::to("article/$this->id");
@@ -108,6 +115,10 @@ class Article extends Model
 
         $result = json_decode(file_get_contents($api_url));
 
-        return $result->response->count;
+        $count = $result->response->count;
+
+        Cache::put($key, $count, 5);
+
+        return $count;
     }
 }
