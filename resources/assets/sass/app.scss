@@ -1,6 +1,6 @@
 
 // Fonts
-@import "font-PFRegal";
+@import "fonts";
 
 // Bootstrap
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -14,35 +14,48 @@ $active: #0096ff;
 
 // Fonts
 
-$serif: 'PFRegal', serif;
-$sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans: "SegoeUI", sans-serif;
 
 
 //Styles
 
 body{
-    font-family: $serif;
+    font-family: $sans;
     font-size: 16px;
+    color: #333;
 }
 
 a{
     font-family: $sans;
     font-size: 14px;
     letter-spacing: 0.02em;
+    color: $active;
     transition: color .2s;
 }
 
 p{
-    font-size: 18px;
+    line-height: 1.5;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: 600;
 }
 
 footer{
     text-align: center;
     margin-top: 50px;
+    color: #767676;
+    border-top: 1px solid #eee;
+    p{
+        font-size: 16px;
+        margin: 20px 0;
+    }
 }
 
 .mainnav{
-    background: $dark;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
     padding: 20px 0;
     a:not(.logo){
         display: inline-block;
@@ -57,14 +70,13 @@ footer{
 }
 
 .logo{
-    margin: 3px 20px 0 0;
+    margin: -4px 20px 0 0;
     display: inline-block;
     vertical-align: top;
     text-decoration: none;
-    color: #fff;
-    font-size: 30px;
-    font-family: $serif;
-    font-weight: 700;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
     &:hover, &:focus{
         text-decoration: none;
         color: $active;
@@ -73,21 +85,30 @@ footer{
 
 .article{
     margin: 50px 0;
+    padding-bottom: 15px;
+    border-radius: 3px;
+    border: 1px solid #f1f1f1;
     img{
         display: block;
         max-width: 100%;
-        margin-top: 20px;
+        border-radius: 3px 3px 0 0;
     }
     .title{
-        font-family: $serif;
-        color: $dark;
+        display: block;
         text-decoration: none;
+        color: #333;
+        h2{
+            font-weight: 600;
+            font-size: 28px;
+        }
         &:hover{
             color: $active;
         }
     }
-    &:not(:last-of-type){
-        margin-bottom: 80px;
+    .title,
+    .info,
+    p{
+        padding: 0 15px;
     }
 }
 
@@ -122,43 +143,42 @@ footer{
 }
 
 .search{
-    padding-top: 6px;
+    padding-top: 1px;
     input{
         float: right;
         width: 100%;
         max-width: 300px;
         box-sizing: border-box;
         padding: 5px 10px;
-        font-family: $serif;
-        border: 1px solid lighten($dark, 20%);
-        background: transparent;
+        font-family: $sans;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        background: #fff;
         color: #ddd;
     }
 }
 
 .insensible{
     display: inline-block;
-    font-weight: 400;
-    font-size: 16px;
-    color: #fff;
-    margin: 16px 0 0;
+    font-weight: 600;
+    font-size: 14px;
+    color: #999;
+    margin: 11px 0 0;
 }
 
 aside{
-    border: 1px solid #ebebeb;
     margin-top: 50px;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
     h3{
-        margin: -1px -1px 0;
-        padding: 12px 15px 10px;
-        font-size: 16px;
+        margin: 0;
+        padding: 10px 15px;
         color: #666;
-        position: relative;
-        background: #f0f0f0;
-        border-top: 2px solid $active;
-        font-weight: 900;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
+        background: #f5f5f5;
+        border-bottom: 1px solid #d8d8d8;
+        border-radius: 3px 3px 0 0;
+        font-size: 16px;
     }
     a{
         position: relative;
@@ -166,7 +186,7 @@ aside{
         padding: 10px 15px;
         text-decoration: none;
         color: darken($active, 20%);
-        border-top: 1px solid #f0f0f0;
+        border-bottom: 1px solid #e5e5e5;
         transition: .2s;
         &:before{
             position: absolute;
@@ -187,8 +207,8 @@ aside{
                 opacity: 1;
             }
         }
-        &:first-of-type{
-            border-top: none;
+        &:last-of-type{
+            border-bottom: none;
         }
     }
     .count{
@@ -232,7 +252,6 @@ aside{
     a {
         font-size: 18px;
         padding: 5px 8px;
-        font-family: $serif;
         border-radius: 5px;
     }
     a:hover {
