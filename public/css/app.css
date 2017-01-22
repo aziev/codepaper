@@ -1198,20 +1198,30 @@ footer p {
   padding: 20px 0;
 }
 
-.mainnav a:not(.logo), .mainnav .inline-form button:not(.logo), .inline-form .mainnav button:not(.logo) {
+.categories {
   display: inline-block;
-  vertical-align: top;
-  color: #fff;
-  margin: 8px 20px 0 0;
-  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 33px;
+  float: right;
 }
 
-.mainnav a:not(.logo):hover, .mainnav .inline-form button:not(.logo):hover, .inline-form .mainnav button:not(.logo):hover {
-  color: #cccccc;
+.categories a, .categories .inline-form button, .inline-form .categories button {
+  color: #333;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.categories a:first-of-type, .categories .inline-form button:first-of-type, .inline-form .categories button:first-of-type {
+  margin-left: 0;
+}
+
+.categories a:hover, .categories .inline-form button:hover, .inline-form .categories button:hover {
+  color: #0096ff;
 }
 
 .logo {
-  margin: -4px 20px 0 0;
+  margin: -6px 30px 0 0;
   display: inline-block;
   vertical-align: top;
   text-decoration: none;
@@ -1234,7 +1244,7 @@ footer p {
 
 .article img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   border-radius: 3px 3px 0 0;
 }
 
@@ -1268,7 +1278,7 @@ footer p {
 }
 
 .single img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .article .info,
@@ -1317,8 +1327,9 @@ footer p {
   display: inline-block;
   font-weight: 600;
   font-size: 14px;
+  line-height: 33px;
+  margin: 0;
   color: #999;
-  margin: 11px 0 0;
 }
 
 aside {
@@ -1427,6 +1438,12 @@ aside .count {
   background: #efefef;
 }
 
+@media (max-width: 1000px) {
+  .insensible {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .logo {
     margin-bottom: 20px;
@@ -1434,8 +1451,13 @@ aside .count {
   .search input {
     float: left;
   }
-  .insensible {
-    display: none;
+}
+
+@media (max-width: 500px) {
+  .categories {
+    display: block;
+    float: none;
+    padding-bottom: 20px;
   }
 }
 

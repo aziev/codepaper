@@ -16,6 +16,11 @@
                 <div class="col-xs-12 col-sm-8 col-md-9">
                     <a href="{{ URL::to('/') }}" class="logo">CodePaper</a>
                     <h1 class="insensible">Статьи о программировании</h1>
+                    <div class="categories">
+                        @foreach ($categories as $category)
+                            <a href='{{ URL::to("category/$category->slug") }}'>{{ $category->title }}</a>
+                        @endforeach
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <form action="{{ URL::to('/') }}" class="search">
@@ -27,10 +32,10 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-7 col-md-offset-1">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
                 @yield ('content')
             </div>
-            <div class="col-xs-12 col-md-3 col-md-offset-1">
+            <!-- <div class="col-xs-12 col-md-3 col-md-offset-1">
                 <aside>
                     <h3>Категории</h3>
                     @foreach ($categories as $category)
@@ -49,7 +54,7 @@
                         </a>
                     @endforeach
                 </aside>
-            </div>
+            </div> -->
         </div>
     </div>
     <footer class="container">
