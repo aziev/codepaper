@@ -35,7 +35,7 @@
                     <label for="">Категория</label>
                     <select class="form-control" name="category_id" required="">
                         @foreach (App\Category::all() as $category)
-                            <option value="{{ $category->id }}" {{ isset($article) ? 'selected' : '' }}>{{ $category->title }}</option>
+                            <option value="{{ $category->id }}" {{ isset($article) && $article->category_id == $category->id ? 'selected' : '' }}>{{ $category->title }}</option>
                         @endforeach
                     </select>
                 </div>
