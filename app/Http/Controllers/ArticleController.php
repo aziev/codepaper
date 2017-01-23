@@ -75,6 +75,11 @@ class ArticleController extends Controller
             ]);
         }
 
+        if (count($request['tags']))
+        {
+            $article->tags()->attach($request['tags']);
+        }
+
         return redirect("article/$article->id");
     }
 
@@ -138,6 +143,15 @@ class ArticleController extends Controller
                     'path' => $path,
                 ]);
             }
+        }
+
+        if (count($request['tags']))
+        {
+            $article->tags()->sync($request['tags']);
+        }
+        else
+        {
+            $article->tags()->detach();
         }
 
         return redirect("article/$article->id");

@@ -177,56 +177,56 @@ footer{
     color: #999;
 }
 
-aside{
-    margin-top: 50px;
-    border: 1px solid #d8d8d8;
-    border-radius: 3px;
-    h3{
-        margin: 0;
-        padding: 10px 15px;
-        color: #666;
-        background: #f5f5f5;
-        border-bottom: 1px solid #d8d8d8;
-        border-radius: 3px 3px 0 0;
-        font-size: 16px;
-    }
-    a{
-        position: relative;
-        display: block;
-        padding: 10px 15px;
-        text-decoration: none;
-        color: darken($active, 20%);
-        border-bottom: 1px solid #e5e5e5;
-        transition: .2s;
-        &:before{
-            position: absolute;
-            left: -1px;
-            top: 0;
-            display: block;
-            content: '';
-            width: 2px;
-            height: 100%;
-            background: $active;
-            opacity: 0;
-            transition: opacity .2s;
-        }
-        &:hover{
-            color: $active;
-            background: #fafafa;
-            &:before{
-                opacity: 1;
-            }
-        }
-        &:last-of-type{
-            border-bottom: none;
-        }
-    }
-    .count{
-        float: right;
-        color: #999;
-        font-size: 14px;
-    }
-}
+// aside{
+//     margin-top: 50px;
+//     border: 1px solid #d8d8d8;
+//     border-radius: 3px;
+//     h3{
+//         margin: 0;
+//         padding: 10px 15px;
+//         color: #666;
+//         background: #f5f5f5;
+//         border-bottom: 1px solid #d8d8d8;
+//         border-radius: 3px 3px 0 0;
+//         font-size: 16px;
+//     }
+//     a{
+//         position: relative;
+//         display: block;
+//         padding: 10px 15px;
+//         text-decoration: none;
+//         color: darken($active, 20%);
+//         border-bottom: 1px solid #e5e5e5;
+//         transition: .2s;
+//         &:before{
+//             position: absolute;
+//             left: -1px;
+//             top: 0;
+//             display: block;
+//             content: '';
+//             width: 2px;
+//             height: 100%;
+//             background: $active;
+//             opacity: 0;
+//             transition: opacity .2s;
+//         }
+//         &:hover{
+//             color: $active;
+//             background: #fafafa;
+//             &:before{
+//                 opacity: 1;
+//             }
+//         }
+//         &:last-of-type{
+//             border-bottom: none;
+//         }
+//     }
+//     .count{
+//         float: right;
+//         color: #999;
+//         font-size: 14px;
+//     }
+// }
 
 .inline-form{
     display: inline-block;
@@ -266,6 +266,14 @@ aside{
     }
     a:hover {
         background: #efefef;
+    }
+}
+
+.article-form{
+    padding-bottom: 50px;
+    .checkbox{
+        display: inline-block;
+        margin-right: 20px;
     }
 }
 

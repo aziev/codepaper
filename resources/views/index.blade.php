@@ -23,6 +23,9 @@
                 <i class="fa fa-comments-o" aria-hidden="true"></i>{{ $article->getCommentsCount() }}
             </span>
         </div>
+        @foreach ($article->tags as $tag)
+            <!-- <span>{{ $tag->title }}</span> -->
+        @endforeach
     </article>
 @empty
     <p>К сожалению, по вашему запросу ничего не найдено.</p>

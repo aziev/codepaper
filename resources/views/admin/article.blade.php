@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h1>Создание статьи</h1>
-            <form action="{{ $action ?? URL::to('article') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ $action ?? URL::to('article') }}" method="post" enctype="multipart/form-data" class="article-form">
                 {{ csrf_field() }}
                 @if (isset($article))
                     {{ method_field('PUT') }}
@@ -30,6 +30,16 @@
                 <div class="form-group">
                     <label for="">Ссылка на оригинал</label>
                     <input type="text" class="form-control" name="original_url" value="{{ $article->original_url ?? '' }}">
+                </div>
+                <div class="form-group">
+                    @foreach (App\Tag::all() as $tag)
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="tags[]" value="{{ $tag->id }}" {{ isset($article) && $article->tags->contains($tag) ? 'checked' : '' }}>
+                                <span>{{ $tag->title }}</span>
+                            </label>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="form-group">
                     <label for="">Категория</label>

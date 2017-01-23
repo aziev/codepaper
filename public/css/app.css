@@ -1332,66 +1332,6 @@ footer p {
   color: #999;
 }
 
-aside {
-  margin-top: 50px;
-  border: 1px solid #d8d8d8;
-  border-radius: 3px;
-}
-
-aside h3 {
-  margin: 0;
-  padding: 10px 15px;
-  color: #666;
-  background: #f5f5f5;
-  border-bottom: 1px solid #d8d8d8;
-  border-radius: 3px 3px 0 0;
-  font-size: 16px;
-}
-
-aside a, aside .inline-form button, .inline-form aside button {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: #005a99;
-  border-bottom: 1px solid #e5e5e5;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-
-aside a:before, aside .inline-form button:before, .inline-form aside button:before {
-  position: absolute;
-  left: -1px;
-  top: 0;
-  display: block;
-  content: '';
-  width: 2px;
-  height: 100%;
-  background: #0096ff;
-  opacity: 0;
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-}
-
-aside a:hover, aside .inline-form button:hover, .inline-form aside button:hover {
-  color: #0096ff;
-  background: #fafafa;
-}
-
-aside a:hover:before, aside .inline-form button:hover:before, .inline-form aside button:hover:before {
-  opacity: 1;
-}
-
-aside a:last-of-type, aside .inline-form button:last-of-type, .inline-form aside button:last-of-type {
-  border-bottom: none;
-}
-
-aside .count {
-  float: right;
-  color: #999;
-  font-size: 14px;
-}
-
 .inline-form {
   display: inline-block;
 }
@@ -1436,6 +1376,15 @@ aside .count {
 
 .pagination a:hover, .pagination .inline-form button:hover, .inline-form .pagination button:hover {
   background: #efefef;
+}
+
+.article-form {
+  padding-bottom: 50px;
+}
+
+.article-form .checkbox {
+  display: inline-block;
+  margin-right: 20px;
 }
 
 @media (max-width: 1000px) {
