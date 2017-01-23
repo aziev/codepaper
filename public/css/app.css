@@ -1236,7 +1236,7 @@ footer p {
 }
 
 .article {
-  margin: 50px 0;
+  margin: 80px 0;
   padding-bottom: 15px;
   border-radius: 3px;
   border: 1px solid #f1f1f1;
@@ -1267,6 +1267,10 @@ footer p {
 .article .info,
 .article p {
   padding: 0 15px;
+}
+
+.article:last-of-type {
+  margin-bottom: 30px;
 }
 
 .single {
@@ -1318,9 +1322,14 @@ footer p {
   font-family: "SegoeUI", sans-serif;
   font-size: 14px;
   border: 1px solid #ddd;
-  border-radius: 3px;
+  border-radius: 4px;
   background: #fff;
-  color: #ddd;
+  color: #333;
+  outline: none;
+}
+
+.search input:focus {
+  border-color: #0096ff;
 }
 
 .insensible {
