@@ -1180,6 +1180,12 @@ h1 {
   font-weight: 600;
 }
 
+pre {
+  padding: 16px;
+  background: #f7f7f7;
+  border-radius: 4px;
+}
+
 footer {
   text-align: center;
   margin-top: 50px;
