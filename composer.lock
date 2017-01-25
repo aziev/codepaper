@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2a9092a6dc90d74c0ffdc126a58bb89",
-    "content-hash": "86b58b428d13f83a0315a628a609f36c",
+    "hash": "8f19b143208b6b0dc708a373c159ddfc",
+    "content-hash": "7d8bf63085cfb27dcc6fac04c914fff7",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -856,6 +856,49 @@
                 "php"
             ],
             "time": "2016-12-06 11:30:35"
+        },
+        {
+            "name": "nothingworks/blade-svg",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamwathan/blade-svg.git",
+                "reference": "0002112f8ccd79b23451958e9e5a3fa03585a035"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/0002112f8ccd79b23451958e9e5a3fa03585a035",
+                "reference": "0002112f8ccd79b23451958e9e5a3fa03585a035",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^5.3",
+                "illuminate/support": "^5.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BladeSvg\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "time": "2016-09-05 14:37:45"
         },
         {
             "name": "paragonie/random_compat",
