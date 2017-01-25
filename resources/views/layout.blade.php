@@ -14,7 +14,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-9">
-                    <a href="{{ URL::to('/') }}" class="logo">CodePaper</a>
+                    <a href="{{ URL::to('/') }}" class="logo">
+                        <img src="{{ URL::asset('img/logo.png') }}" alt="" height="30" width="auto">
+                    </a>
                     <h1 class="insensible">Статьи о программировании</h1>
                     <div class="categories">
                         @foreach ($categories as $category)

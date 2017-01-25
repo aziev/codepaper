@@ -1339,12 +1339,7 @@ footer p {
 }
 
 .insensible {
-  display: inline-block;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 33px;
-  margin: 0;
-  color: #999;
+  display: none;
 }
 
 .inline-form {
