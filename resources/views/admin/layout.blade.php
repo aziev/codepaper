@@ -15,5 +15,11 @@
     <script>
         var editor = CKEDITOR.replace( 'editor1' );
 </script>
+<script src="{{ URL::asset('js/sisyphus.min.js') }}"></script>
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('.article-form').sisyphus(); 
+    });
+</script>
 </body>
 </html>
