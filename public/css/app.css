@@ -1180,6 +1180,12 @@ h1 {
   font-weight: 600;
 }
 
+pre {
+  padding: 16px;
+  background: #f7f7f7;
+  border-radius: 4px;
+}
+
 footer {
   text-align: center;
   margin-top: 50px;
@@ -1221,7 +1227,7 @@ footer p {
 }
 
 .logo {
-  margin: -6px 30px 0 0;
+  margin: 0 30px 0 0;
   display: inline-block;
   vertical-align: top;
   text-decoration: none;
@@ -1235,8 +1241,12 @@ footer p {
   color: #0096ff;
 }
 
+.logo svg {
+  height: 30px;
+}
+
 .article {
-  margin: 50px 0;
+  margin: 80px 0;
   padding-bottom: 15px;
   border-radius: 3px;
   border: 1px solid #f1f1f1;
@@ -1267,6 +1277,10 @@ footer p {
 .article .info,
 .article p {
   padding: 0 15px;
+}
+
+.article:last-of-type {
+  margin-bottom: 30px;
 }
 
 .single {
@@ -1318,18 +1332,18 @@ footer p {
   font-family: "SegoeUI", sans-serif;
   font-size: 14px;
   border: 1px solid #ddd;
-  border-radius: 3px;
+  border-radius: 4px;
   background: #fff;
-  color: #ddd;
+  color: #333;
+  outline: none;
+}
+
+.search input:focus {
+  border-color: #0096ff;
 }
 
 .insensible {
-  display: inline-block;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 33px;
-  margin: 0;
-  color: #999;
+  display: none;
 }
 
 .inline-form {

@@ -168,6 +168,7 @@ return [
          */
 
         Intervention\Image\ImageServiceProvider::class,
+        BladeSvg\BladeSvgServiceProvider::class,
 
         /*
          * Application Service Providers...
