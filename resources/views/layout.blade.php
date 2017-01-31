@@ -37,30 +37,16 @@
             <div class="col-xs-12 col-md-8 col-md-offset-2">
                 @yield ('content')
             </div>
-            <!-- <div class="col-xs-12 col-md-3 col-md-offset-1">
-                <aside>
-                    <h3>Категории</h3>
-                    @foreach ($categories as $category)
-                        <a href='{{ URL::to("category/$category->slug") }}'>
-                            {{ $category->title }}
-                            <span class="count">{{ $category->getArticlesCount() }}</span>
-                        </a>
-                    @endforeach
-                </aside>
-                <aside>
-                    <h3>Теги</h3>
-                    @foreach ($tags as $tag)
-                        <a href="">
-                            {{ $tag->title }}
-                            <span class="count">{{ $tag->getArticlesCount() }}</span>
-                        </a>
-                    @endforeach
-                </aside>
-            </div> -->
         </div>
     </div>
     <footer class="container">
-        <p>&copy; {{ config('app.name') }} 2017</p>
+        <div class="text">
+            <span>&copy; {{ config('app.name') }} 2017</span>
+            <span class="pull-right">
+                <a href="https://vk.com/codepaper" target="_blank">Вконтакте</a>
+                <a href="https://www.facebook.com/codepaper.ru" target="_blank">Фейсбук</a>
+            </span>
+        </div>
     </footer>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -70,6 +56,5 @@
         ga('create', 'UA-90727834-1', 'auto');
         ga('send', 'pageview');
     </script>
-    
 </body>
 </html>

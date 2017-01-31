@@ -48,13 +48,19 @@ pre{
 }
 
 footer{
-    text-align: center;
+    text-align: left;
     margin-top: 50px;
     color: #767676;
-    border-top: 1px solid #eee;
-    p{
-        font-size: 16px;
-        margin: 20px 0;
+    .text{
+        font-size: 14px;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+    }
+    a{
+        margin-left: 20px;
+        &:first-of-type{
+            margin-left: 0;
+        }
     }
 }
 
