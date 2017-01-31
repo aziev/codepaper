@@ -1294,6 +1294,13 @@ footer p {
   width: 100%;
 }
 
+.single blockquote {
+  padding: 0 1em;
+  color: #777;
+  border-left: 0.25em solid #ddd;
+  margin: 1em 0;
+}
+
 .text-secondary {
   font-size: 13px;
   font-style: italic;
