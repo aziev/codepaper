@@ -27,7 +27,6 @@ body{
 
 a{
     font-family: $sans;
-    font-size: 14px;
     letter-spacing: 0.02em;
     color: $active;
     transition: color .2s;
@@ -141,6 +140,11 @@ footer{
     img{
         width: 100%;
     }
+}
+
+.text-secondary{
+    font-size: 13px;
+    font-style: italic;
 }
 
 .article,

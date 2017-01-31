@@ -36,10 +36,6 @@
         <span class="comments">
             <i class="fa fa-comments-o" aria-hidden="true"></i>{{ $article->getCommentsCount() }}
         </span>
-        <span class="link pull-right">
-            <i class="fa fa-link" aria-hidden="true"></i>
-            <a href="{{ $article->original_url }}" target="_blank" rel="noopener noreferer">{{ $article->getOriginalHost() }}</a>
-        </span>
         <span class="author pull-right">
             <i class="fa fa-user" aria-hidden="true"></i>
             <a href="{{ $article->user->github }}" target="_blank" rel="noopener noreferer">{{ $article->user->name }}</a>
@@ -48,7 +44,10 @@
     <div class="image">
         <img src="{{ $article->picture->path }}" alt="">
     </div>
-    <div class="text">{!! $article->text !!}</div>
+    <div class="text">
+        {!! $article->text !!}
+        <p class="text-secondary">Оригинал статьи на {{ $article->getOriginalHost() }} доступен по <a href="{{ $article->original_url }}">ссылке</a>.</p>
+    </div>
 </article>
 <div class="sharing">
     <script src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>

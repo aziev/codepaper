@@ -1164,7 +1164,6 @@ body {
 
 a, .inline-form button {
   font-family: "SegoeUI", sans-serif;
-  font-size: 14px;
   letter-spacing: 0.02em;
   color: #0096ff;
   -webkit-transition: color .2s;
@@ -1293,6 +1292,11 @@ footer p {
 
 .single img {
   width: 100%;
+}
+
+.text-secondary {
+  font-size: 13px;
+  font-style: italic;
 }
 
 .article .info,
