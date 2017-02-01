@@ -8,7 +8,6 @@
 <meta property="og:description" content="{{ $article->getPreviewText() }}">
 <meta property="image" content="{{ URL::asset($article->picture->getPath('vk')) }}"> <!-- VK -->
 <meta property="og:image" content="{{ URL::asset($article->picture->getPath('fb')) }}"> <!-- FB -->
-<meta property="fb:app_id" content="729337813885152">
 @stop
 
 @section ('content')

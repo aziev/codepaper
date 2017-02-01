@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/app.css?v=' . filemtime('css/app.css')) }}">
     <link rel="icon" href="{{ URL::asset('favicon.ico') }}">
     @yield ('meta')
+    <meta property="fb:app_id" content="729337813885152">
 </head>
 <body>
     <nav class="mainnav">

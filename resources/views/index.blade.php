@@ -1,5 +1,13 @@
 @extends ('layout')
 
+@section ('meta')
+<meta property="og:url" content="{{ Request::url() }}">
+<meta property="og:title" content="{{ config('app.name') }}">
+<meta property="og:description" content="Cтатьи про программирование. Фронтенд, бэкенд, мобильные приложения, карьера.">
+<meta property="image" content="{{ URL::asset('img/share/537x240.png') }}"> <!-- VK -->
+<meta property="og:image" content="{{ URL::asset('img/share/1200x630.png') }}"> <!-- FB -->
+@stop
+
 @section ('content')
 
 @if (Request::has('search'))
