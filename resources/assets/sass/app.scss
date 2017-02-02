@@ -9,8 +9,8 @@
 
 // Colors
 
-$dark: #333333;
-$active: #0096ff;
+$dark: #3c4146;
+$active: #1878bb;
 
 // Fonts
 
@@ -23,6 +23,7 @@ body{
     font-family: $sans;
     font-size: 16px;
     color: #333;
+    background: #f5f5f5;
 }
 
 a{
@@ -51,22 +52,26 @@ footer{
     text-align: left;
     margin-top: 50px;
     color: #767676;
+    border-top: 1px solid #ddd;
     .text{
         font-size: 14px;
         padding: 30px 0;
-        border-top: 1px solid #eee;
     }
     a{
-        margin-left: 20px;
+        text-decoration: none;
+        margin-left: 16px;
         &:first-of-type{
             margin-left: 0;
+        }
+        &:hover{
+            color: lighten($active, 20%);
         }
     }
 }
 
 .mainnav{
-    background: #f5f5f5;
-    border-bottom: 1px solid #e5e5e5;
+    background: $dark;
+    border-bottom: 1px solid #202326;
     padding: 20px 0;
 }
 
@@ -102,15 +107,17 @@ footer{
         color: $active;
     }
     svg{
+        display: block;
         height: 30px;
     }
 }
 
 .article{
     margin: 80px 0;
-    padding-bottom: 15px;
+    padding-bottom: 22px;
     border-radius: 3px;
     border: 1px solid #f1f1f1;
+    background: #fff;
     img{
         display: block;
         width: 100%;
@@ -123,6 +130,7 @@ footer{
         h2{
             font-weight: 600;
             font-size: 28px;
+            margin: 22px 0;
         }
         &:hover{
             color: $active;
@@ -131,7 +139,7 @@ footer{
     .title,
     .info,
     p{
-        padding: 0 15px;
+        padding: 0 22px;
     }
     &:last-of-type{
         margin-bottom: 30px;
@@ -152,6 +160,11 @@ footer{
         border-left: 0.25em solid #ddd;
         margin: 1em 0;
     }
+}
+
+.single-bg{
+    background: #fff;
+    border-radius: 0 0 4px 4px;
 }
 
 .text-secondary{
@@ -189,10 +202,10 @@ footer{
         padding: 5px 10px;
         font-family: $sans;
         font-size: 14px;
-        border: 1px solid #ddd;
+        border: 1px solid transparent;
         border-radius: 4px;
-        background: #fff;
-        color: #333;
+        background: #202326;
+        color: #fff;
         outline: none;
         &:focus{
             border-color: $active;
@@ -255,6 +268,53 @@ footer{
     .checkbox{
         display: inline-block;
         margin-right: 20px;
+    }
+}
+
+.sidebar{
+    margin-top: 80px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #f1f1f1;
+    h3{
+        margin: 0;
+        font-size: 16px;
+        padding: 16px 20px;
+        color: #555;
+    }
+    a{
+        position: relative;
+        display: block;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: #333;
+        border-top: 1px solid #e5e5e5;
+        font-size: 14px;
+        &:before{
+            display: block;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            transition: background .2s;
+        }
+        &:last-of-type{
+            border-radius: 0 0 4px 4px;
+            &:before{
+                border-radius: 0 0 0 4px;
+            }
+        }
+        &:hover{
+            &:before{
+                background: $active;
+            }
+        }
+    }
+    .count{
+        float: right;
+        color: #999;
     }
 }
 

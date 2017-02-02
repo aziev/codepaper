@@ -35,17 +35,13 @@
         <span class="comments">
             <i class="fa fa-comments-o" aria-hidden="true"></i>{{ $article->getCommentsCount() }}
         </span>
-        <span class="author pull-right">
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <a href="{{ $article->user->github }}" target="_blank" rel="noopener noreferer">{{ $article->user->name }}</a>
-        </span>
     </div>
     <div class="image">
         <img src="{{ $article->picture->path }}" alt="">
     </div>
     <div class="text">
         {!! $article->text !!}
-        <p class="text-secondary">Оригинал статьи на {{ $article->getOriginalHost() }} доступен по <a href="{{ $article->original_url }}">ссылке</a>.</p>
+        <p class="text-secondary">Статью перевел <a href="{{ $article->user->github }}" target="_blank">{{ $article->user->name }}</a>. Оригинал на {{ $article->getOriginalHost() }} доступен по <a href="{{ $article->original_url }}">ссылке</a>.</p>
     </div>
 </article>
 <div class="sharing">

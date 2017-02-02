@@ -19,11 +19,11 @@
                         @icon('logo')
                     </a>
                     <h1 class="insensible">Статьи о программировании</h1>
-                    <div class="categories">
+<!--                     <div class="categories">
                         @foreach ($categories as $category)
                             <a href='{{ URL::to("category/$category->slug") }}'>{{ $category->title }}</a>
                         @endforeach
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <form action="{{ URL::to('/') }}" class="search">
@@ -35,18 +35,28 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="col-xs-12 col-md-8 {{ Request::is('article/*') ? 'single-bg' : '' }}">
                 @yield ('content')
+            </div>
+            <div class="col-xs-12 col-md-3 col-md-offset-1">
+                <div class="sidebar">
+                    <h3>Категории</h3>
+                    @foreach ($categories as $category)
+                        <a href='{{ URL::to("category/$category->slug") }}'>{{ $category->title }}<span class="count">{{ $category->getArticlesCount() }}</span></a>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
-    <footer class="container">
-        <div class="text">
-            <span>&copy; {{ config('app.name') }} 2017</span>
-            <span class="pull-right">
-                <a href="https://vk.com/codepaper" target="_blank">Вконтакте</a>
-                <a href="https://www.facebook.com/codepaper.ru" target="_blank">Фейсбук</a>
-            </span>
+    <footer>
+        <div class="container">
+            <div class="text">
+                <span>&copy; {{ config('app.name') }} 2017</span>
+                <span class="pull-right">
+                    <a href="https://vk.com/codepaper" target="_blank">Вконтакте</a>
+                    <a href="https://www.facebook.com/codepaper.ru" target="_blank">Фейсбук</a>
+                </span>
+            </div>
         </div>
     </footer>
     <script>
