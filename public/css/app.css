@@ -1254,7 +1254,7 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   color: #1878bb;
 }
 
-.logo svg {
+.logo svg, .logo img {
   display: block;
   height: 30px;
 }

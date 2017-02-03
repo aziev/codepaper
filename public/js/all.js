@@ -10,3 +10,5 @@ if (typeof SVGRect == "undefined")
     $logo.innerHTML = '';
     $logo.appendChild($image);
 }
+
+//# sourceMappingURL=all.js.map

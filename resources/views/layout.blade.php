@@ -9,6 +9,7 @@
     <link rel="icon" href="{{ URL::asset('favicon.ico') }}">
     @yield ('meta')
     <meta property="fb:app_id" content="729337813885152">
+    <meta name="root" content="{{ URL::to('/') }}">
 </head>
 <body>
     <nav class="mainnav">
@@ -19,11 +20,6 @@
                         @icon('logo')
                     </a>
                     <h1 class="insensible">Статьи о программировании</h1>
-<!--                     <div class="categories">
-                        @foreach ($categories as $category)
-                            <a href='{{ URL::to("category/$category->slug") }}'>{{ $category->title }}</a>
-                        @endforeach
-                    </div> -->
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-3">
                     <form action="{{ URL::to('/') }}" class="search">
@@ -59,6 +55,7 @@
             </div>
         </div>
     </footer>
+    <script src="{{ URL::asset('js/all.js') }}"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
