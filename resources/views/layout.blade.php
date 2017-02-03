@@ -38,7 +38,9 @@
                 <div class="sidebar">
                     <h3>Категории</h3>
                     @foreach ($categories as $category)
-                        <a href='{{ URL::to("category/$category->slug") }}'>{{ $category->title }}<span class="count">{{ $category->getArticlesCount() }}</span></a>
+                        <a href='{{ URL::to("category/$category->slug") }}' class="{{ Request::segment(2) == $category->slug ? 'active' : '' }}">
+                            {{ $category->title }}<span class="count">{{ $category->getArticlesCount() }}</span>
+                        </a>
                     @endforeach
                 </div>
             </div>

@@ -1478,7 +1478,7 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   border-radius: 0 0 0 4px;
 }
 
-.sidebar a:hover:before, .sidebar .inline-form button:hover:before, .inline-form .sidebar button:hover:before {
+.sidebar a:hover:before, .sidebar .inline-form button:hover:before, .inline-form .sidebar button:hover:before, .sidebar a.active:before, .sidebar .inline-form button.active:before, .inline-form .sidebar button.active:before {
   background: #1878bb;
 }
 

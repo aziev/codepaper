@@ -306,7 +306,7 @@ footer{
                 border-radius: 0 0 0 4px;
             }
         }
-        &:hover{
+        &:hover, &.active{
             &:before{
                 background: $active;
             }
