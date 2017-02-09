@@ -1402,7 +1402,8 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
 
 .pagination {
   text-align: center;
-  margin-top: 130px;
+  margin-top: 80px;
+  padding: 0;
 }
 
 .pagination li {
@@ -1419,6 +1420,7 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   font-size: 18px;
   padding: 5px 8px;
   border-radius: 5px;
+  text-decoration: none;
 }
 
 .pagination a:hover, .pagination .inline-form button:hover, .inline-form .pagination button:hover {

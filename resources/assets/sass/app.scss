@@ -244,7 +244,8 @@ footer{
 
 .pagination {
     text-align: center;
-    margin-top: 130px;
+    margin-top: 80px;
+    padding: 0;
     li {
         display: inline;
         font-size: 18px;
@@ -257,6 +258,7 @@ footer{
         font-size: 18px;
         padding: 5px 8px;
         border-radius: 5px;
+        text-decoration: none;
     }
     a:hover {
         background: #efefef;
