@@ -27,13 +27,17 @@
         svg{
             height: 30px;
         }
+        svg .cls-1{
+            fill: #333;
+        }
         h1{
             font-size: 96px;
-            margin: 0 0 20px;
+            font-weight: 400;
+            margin: 0 0 10px;
         }
         p{
             font-size: 26px;
-            margin: 20px 0;
+            margin: 10px 0 20px;
         }
         .logo{
             display: inline-block;
@@ -41,6 +45,9 @@
             top: 20px;
             left: 50%;
             margin-left: -77px;
+        }
+        a{
+            color: #1878bb;
         }
     </style>
 </head>
@@ -50,7 +57,7 @@
             <a href="{{ URL::to('/') }}" class="logo">@icon ('logo')</a>
             <h1>@yield('error')</h1>
             <p>@yield('message')</p>
-            <a href="{{ URL::to('/') }}">Перейти на главную</a>
+            <!-- <a href="{{ URL::to('/') }}">Перейти на главную</a> -->
         </div>
     </div>
 </body>
