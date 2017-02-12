@@ -1300,7 +1300,11 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
 }
 
 .single {
-  margin: 50px 0;
+  margin: 80px 0 50px;
+  background: #fff;
+  padding: 1px 15px 15px;
+  border-radius: 4px;
+  border: 1px solid #f1f1f1;
 }
 
 .single .image {
@@ -1316,11 +1320,6 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   color: #777;
   border-left: 0.25em solid #ddd;
   margin: 1em 0;
-}
-
-.single-bg {
-  background: #fff;
-  border-radius: 0 0 4px 4px;
 }
 
 .text-secondary {

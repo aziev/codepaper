@@ -31,7 +31,7 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-8 {{ Request::is('article/*') ? 'single-bg' : '' }}">
+            <div class="col-xs-12 col-md-8">
                 @yield ('content')
             </div>
             <div class="col-xs-12 col-md-3 col-md-offset-1">
