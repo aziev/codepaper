@@ -15,13 +15,13 @@
     <nav class="mainnav">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-9">
+                <div class="col-xs-12 col-sm-8">
                     <a href="{{ URL::to('/') }}" class="logo">
                         @icon('logo')
                     </a>
                     <h1 class="insensible">Статьи о программировании</h1>
                 </div>
-                <div class="col-xs-12 col-sm-4 col-md-3">
+                <div class="col-xs-12 col-sm-4">
                     <form action="{{ URL::to('/') }}" class="search">
                         <input type="text" name="search" placeholder="Поиск...">
                     </form>
@@ -34,12 +34,20 @@
             <div class="col-xs-12 col-md-8">
                 @yield ('content')
             </div>
-            <div class="col-xs-12 col-md-3 col-md-offset-1">
-                <div class="sidebar">
+            <div class="col-xs-12 col-md-4">
+                <div class="sidebar sidebar-categories">
                     <h3>Категории</h3>
                     @foreach ($categories as $category)
                         <a href='{{ URL::to("category/$category->slug") }}' class="{{ Request::segment(2) == $category->slug ? 'active' : '' }}">
                             {{ $category->title }}<span class="count">{{ $category->getArticlesCount() }}</span>
+                        </a>
+                    @endforeach
+                </div>
+                <div class="sidebar">
+                    <h3>Популярные статьи</h3>
+                    @foreach ($popular_articles as $article)
+                        <a href='{{ URL::to("article/$article->id") }}'>
+                            {{ $article->title }}
                         </a>
                     @endforeach
                 </div>

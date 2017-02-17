@@ -196,7 +196,7 @@ footer{
     input{
         float: right;
         width: 100%;
-        max-width: 300px;
+        max-width: 310px;
         box-sizing: border-box;
         padding: 5px 10px;
         font-family: $sans;
@@ -273,10 +273,13 @@ footer{
 }
 
 .sidebar{
-    margin-top: 80px;
+    margin: 0 0 50px 50px;
     background: #fff;
     border-radius: 4px;
     border: 1px solid #f1f1f1;
+    &:first-of-type{
+        margin-top: 80px;
+    }
     h3{
         margin: 0;
         font-size: 16px;
@@ -288,40 +291,56 @@ footer{
         display: block;
         padding: 12px 20px;
         text-decoration: none;
-        color: #333;
+        color: $active;
         border-top: 1px solid #e5e5e5;
         font-size: 14px;
-        &:before{
-            display: block;
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 3px;
-            height: 100%;
-            transition: background .2s;
-        }
-        &:last-of-type{
-            border-radius: 0 0 4px 4px;
-            &:before{
-                border-radius: 0 0 0 4px;
-            }
-        }
-        &:hover, &.active{
-            &:before{
-                background: $active;
-            }
+        &:hover{
+            color: lighten($active, 20%);
+            background: #fafafa;
         }
     }
     .count{
         float: right;
         color: #999;
     }
+    &.sidebar-categories{
+        a{
+            color: #333;
+            &:before{
+                display: block;
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 3px;
+                height: 100%;
+                transition: background .2s;
+            }
+            &:last-of-type{
+                border-radius: 0 0 4px 4px;
+                &:before{
+                    border-radius: 0 0 0 4px;
+                }
+            }
+            &:hover, &.active{
+                &:before{
+                    background: $active;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 1000px){
     .insensible{
         display: none;
+    }
+}
+
+@media (max-width: 991px){
+
+    .sidebar{
+        margin-left: 0;
     }
 }
 

@@ -1358,7 +1358,7 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
 .search input {
   float: right;
   width: 100%;
-  max-width: 300px;
+  max-width: 310px;
   box-sizing: border-box;
   padding: 5px 10px;
   font-family: "SegoeUI", sans-serif;
@@ -1436,10 +1436,14 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
 }
 
 .sidebar {
-  margin-top: 80px;
+  margin: 0 0 50px 50px;
   background: #fff;
   border-radius: 4px;
   border: 1px solid #f1f1f1;
+}
+
+.sidebar:first-of-type {
+  margin-top: 80px;
 }
 
 .sidebar h3 {
@@ -1454,12 +1458,26 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   display: block;
   padding: 12px 20px;
   text-decoration: none;
-  color: #333;
+  color: #1878bb;
   border-top: 1px solid #e5e5e5;
   font-size: 14px;
 }
 
-.sidebar a:before, .sidebar .inline-form button:before, .inline-form .sidebar button:before {
+.sidebar a:hover, .sidebar .inline-form button:hover, .inline-form .sidebar button:hover {
+  color: #50aae9;
+  background: #fafafa;
+}
+
+.sidebar .count {
+  float: right;
+  color: #999;
+}
+
+.sidebar.sidebar-categories a, .sidebar.sidebar-categories .inline-form button, .inline-form .sidebar.sidebar-categories button {
+  color: #333;
+}
+
+.sidebar.sidebar-categories a:before, .sidebar.sidebar-categories .inline-form button:before, .inline-form .sidebar.sidebar-categories button:before {
   display: block;
   content: '';
   position: absolute;
@@ -1471,26 +1489,27 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   transition: background .2s;
 }
 
-.sidebar a:last-of-type, .sidebar .inline-form button:last-of-type, .inline-form .sidebar button:last-of-type {
+.sidebar.sidebar-categories a:last-of-type, .sidebar.sidebar-categories .inline-form button:last-of-type, .inline-form .sidebar.sidebar-categories button:last-of-type {
   border-radius: 0 0 4px 4px;
 }
 
-.sidebar a:last-of-type:before, .sidebar .inline-form button:last-of-type:before, .inline-form .sidebar button:last-of-type:before {
+.sidebar.sidebar-categories a:last-of-type:before, .sidebar.sidebar-categories .inline-form button:last-of-type:before, .inline-form .sidebar.sidebar-categories button:last-of-type:before {
   border-radius: 0 0 0 4px;
 }
 
-.sidebar a:hover:before, .sidebar .inline-form button:hover:before, .inline-form .sidebar button:hover:before, .sidebar a.active:before, .sidebar .inline-form button.active:before, .inline-form .sidebar button.active:before {
+.sidebar.sidebar-categories a:hover:before, .sidebar.sidebar-categories .inline-form button:hover:before, .inline-form .sidebar.sidebar-categories button:hover:before, .sidebar.sidebar-categories a.active:before, .sidebar.sidebar-categories .inline-form button.active:before, .inline-form .sidebar.sidebar-categories button.active:before {
   background: #1878bb;
-}
-
-.sidebar .count {
-  float: right;
-  color: #999;
 }
 
 @media (max-width: 1000px) {
   .insensible {
     display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    margin-left: 0;
   }
 }
 
