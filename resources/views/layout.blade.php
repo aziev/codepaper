@@ -60,7 +60,7 @@
                 <span>&copy; {{ config('app.name') }} 2017</span>
                 <span class="pull-right">
                     <a href="https://vk.com/codepaper" target="_blank">Вконтакте</a>
-                    <a href="https://www.facebook.com/codepaper.ru" target="_blank">Фейсбук</a>
+                    <a href="https://www.facebook.com/codepaper.ru" target="_blank">Facebook</a>
                 </span>
             </div>
         </div>
