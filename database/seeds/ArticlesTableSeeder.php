@@ -24,20 +24,36 @@ class ArticlesTableSeeder extends Seeder
         }
 
         DB::table('articles')->insert([[
-        	'title' => 'Разработка на Laravel',
-        	'text' => $text,
+            'title' => 'Разработка на Laravel',
+            'text' => $text,
             'original_url' => $faker->url(),
-        	'category_id' => 2,
+            'category_id' => 2,
             'user_id' => 1,
-        	'created_at' => $faker->dateTimeThisMonth(),
+            'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ],[
-        	'title' => 'JQuery для чайников',
-        	'text' => $text,
+            'title' => '14 важных показателей производительности сайта, которые вам стоит использовать',
+            'text' => $text,
             'original_url' => $faker->url(),
-        	'category_id' => 1,
+            'category_id' => 2,
+            'user_id' => 1,
+            'created_at' => $faker->dateTimeThisMonth(),
+            'updated_at' => $faker->dateTimeThisMonth(),
+        ],[
+            'title' => 'Еще одна статья',
+            'text' => $text,
+            'original_url' => $faker->url(),
+            'category_id' => 2,
+            'user_id' => 1,
+            'created_at' => $faker->dateTimeThisMonth(),
+            'updated_at' => $faker->dateTimeThisMonth(),
+        ],[
+            'title' => 'JQuery для чайников',
+            'text' => $text,
+            'original_url' => $faker->url(),
+            'category_id' => 1,
             'user_id' => 2,
-        	'created_at' => $faker->dateTimeThisMonth(),
+            'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ]]);
     }

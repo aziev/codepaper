@@ -9,6 +9,7 @@ use App\Category;
 use Image;
 // use File;
 use URL;
+use Route;
 
 class ArticleController extends Controller
 {
@@ -17,14 +18,25 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, $category_slug = null)
+    public function index(Request $request, $param = null)
     {
         $builder = Article::latest();
 
-        if ($category_slug)
+        if ($param)
         {
-            $category = Category::whereSlug($category_slug)->firstOrFail(['id']);
-            $builder->where('category_id', $category->id);
+            switch (\Request::segment(1))
+            {
+                case 'category':
+                    $category = Category::whereSlug($param)->firstOrFail(['id']);
+                    $builder->where('category_id', $category->id);
+                    break;
+                case 'tag':
+                    $builder->whereHas('tags', function ($query) use ($param) {
+                        $query->where('title', $param);
+                    });
+                    break;
+            }
+            
         }
 
         if ($request->has('search'))
@@ -91,10 +103,12 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::whereId($id)->with('user')->firstOrFail();
+        $article = Article::whereId($id)->with(['user', 'tags'])->firstOrFail();
         $article->increment('views');
 
-        return view('article', compact('article'));
+        $similars = Article::where('category_id', $article->category_id)->where('id', '!=', $article->id)->take(2)->get();
+
+        return view('article', compact('article', 'similars'));
     }
 
     /**

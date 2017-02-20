@@ -21,6 +21,14 @@ class PicturesTableSeeder extends Seeder
         ],[
             'picturable_id' => 2,
             'picturable_type' => 'App\Article',
+            'path' => 'http://placehold.it/700x400',
+        ],[
+            'picturable_id' => 3,
+            'picturable_type' => 'App\Article',
+            'path' => 'http://placehold.it/700x400',
+        ],[
+            'picturable_id' => 4,
+            'picturable_type' => 'App\Article',
             'path' => 'http://placehold.it/700x400/ffd640',
         ]]);
     }

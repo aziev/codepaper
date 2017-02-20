@@ -44,6 +44,13 @@
         <p class="text-secondary">Статью перевел <a href="{{ $article->user->github }}" target="_blank">{{ $article->user->name }}</a>. Оригинал на {{ $article->getOriginalHost() }} доступен по <a href="{{ $article->original_url }}">ссылке</a>.</p>
     </div>
 </article>
+<ul class="tags">
+    @foreach ($article->tags as $tag)
+        <li>
+            <a href='{{ URL::to("tag/$tag->title") }}'>{{ $tag->title }}</a>
+        </li>
+    @endforeach
+</ul>
 <div class="sharing">
     <script src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
     <script>
@@ -51,6 +58,21 @@
         document.write(VK.Share.button(false, {type: 'round', text: 'Поделиться'}));
         -->
     </script>
+</div>
+<div class="similars">
+    <h3>Также рекомендуем почитать:</h3>
+    <div class="row">
+        @foreach ($similars as $similar)
+            <div class="col-xs-6">
+                <div class="similar-article">
+                    <a href='{{ URL::to("article/$similar->id") }}'>
+                        <img src="{{ $similar->picture->path }}" alt="">
+                        <p>{{ $similar->title }}</p>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+    </div>
 </div>
 <div id="vk_comments"></div>
 <script src="https://vk.com/js/api/openapi.js?136"></script>

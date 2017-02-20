@@ -1322,6 +1322,62 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   margin: 1em 0;
 }
 
+.tags {
+  padding-left: 0;
+  list-style: none;
+}
+
+.tags li {
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 5px;
+  border: 1px solid #f1f1f1;
+}
+
+.tags a, .tags .inline-form button, .inline-form .tags button {
+  display: inline-block;
+  background: #fff;
+  border-radius: 4px;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #333;
+}
+
+.tags a:hover, .tags .inline-form button:hover, .inline-form .tags button:hover {
+  background: #e6e6e6;
+}
+
+.similars {
+  margin-bottom: 50px;
+}
+
+.similars h3 {
+  font-weight: 400;
+}
+
+.similar-article {
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #f1f1f1;
+  min-height: 310px;
+}
+
+.similar-article a, .similar-article .inline-form button, .inline-form .similar-article button {
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.similar-article img {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+.similar-article p {
+  margin: 0;
+  padding: 15px;
+}
+
 .text-secondary {
   font-size: 13px;
   font-style: italic;
