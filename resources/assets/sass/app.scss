@@ -202,7 +202,6 @@ footer{
 }
 
 .similars{
-    margin-bottom: 50px;
     h4{
         font-size: 18px;
     }
@@ -212,7 +211,7 @@ footer{
     background: #fff;
     border-radius: 4px;
     border: 1px solid #f1f1f1;
-    min-height: 310px;
+    margin-bottom: 50px;
     a{
         color: #333;
         text-decoration: none;

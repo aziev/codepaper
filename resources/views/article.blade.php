@@ -70,7 +70,7 @@
         <h4>Возможно, вам будет интересно также почитать:</h4>
         <div class="row">
             @foreach ($similars as $similar)
-                <div class="col-xs-6">
+                <div class="col-xs-12 col-sm-6">
                     <div class="similar-article">
                         <a href='{{ URL::to("article/$similar->id") }}'>
                             @if (null !== $similar->picture)
