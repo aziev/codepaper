@@ -15,9 +15,11 @@
 @endif
 @forelse ($articles as $article)
     <article class="article">
-        <a href='{{ URL::to("article/$article->id") }}'>
-            <img src="{{ $article->picture->path }}" alt="">
-        </a>
+        @if (null !== $article->picture)
+            <a href='{{ URL::to("article/$article->id") }}'>
+                <img src="{{ $article->picture->path }}" alt="">
+            </a>
+        @endif
         <a href='{{ URL::to("article/$article->id") }}' class="title">
             <h2>{{ $article->title }}</h2>
         </a>

@@ -6,8 +6,10 @@
 <meta property="og:url" content="{{ Request::url() }}">
 <meta property="og:title" content="{{ $article->title }}">
 <meta property="og:description" content="{{ $article->getPreviewText() }}">
-<meta property="image" content="{{ URL::asset($article->picture->getPath('vk')) }}"> <!-- VK -->
-<meta property="og:image" content="{{ URL::asset($article->picture->getPath('fb')) }}"> <!-- FB -->
+@if (null !== $article->picture)
+    <meta property="image" content="{{ URL::asset($article->picture->getPath('vk')) }}"> <!-- VK -->
+    <meta property="og:image" content="{{ URL::asset($article->picture->getPath('fb')) }}"> <!-- FB -->
+@endif
 @stop
 
 @section ('content')
@@ -36,9 +38,11 @@
             <i class="fa fa-comments-o" aria-hidden="true"></i>{{ $article->getCommentsCount() }}
         </span>
     </div>
-    <div class="image">
-        <img src="{{ $article->picture->path }}" alt="">
-    </div>
+    @if (null !== $article->picture)
+        <div class="image">
+            <img src="{{ $article->picture->path }}" alt="">
+        </div>
+    @endif
     <div class="text">
         {!! $article->text !!}
         <p class="text-secondary">Статью перевел <a href="{{ $article->user->github }}" target="_blank">{{ $article->user->name }}</a>. Оригинал на {{ $article->getOriginalHost() }} доступен по <a href="{{ $article->original_url }}">ссылке</a>.</p>
@@ -66,7 +70,9 @@
             <div class="col-xs-6">
                 <div class="similar-article">
                     <a href='{{ URL::to("article/$similar->id") }}'>
-                        <img src="{{ $similar->picture->path }}" alt="">
+                        @if (null !== $similar->picture)
+                            <img src="{{ $similar->picture->path }}" alt="">
+                        @endif
                         <p>{{ $similar->title }}</p>
                     </a>
                 </div>
