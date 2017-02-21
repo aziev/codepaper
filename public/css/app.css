@@ -127,7 +127,6 @@ dfn {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
 }
 
 mark {
@@ -1302,17 +1301,19 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
 .single {
   margin: 80px 0 50px;
   background: #fff;
-  padding: 1px 15px 15px;
+  padding: 0 15px 15px;
   border-radius: 4px;
   border: 1px solid #f1f1f1;
+  position: relative;
 }
 
 .single .image {
-  margin: 1em 0 2em;
+  margin: 0 -15px 15px;
 }
 
 .single img {
   width: 100%;
+  border-radius: 4px 4px 0 0;
 }
 
 .single blockquote {
@@ -1320,6 +1321,19 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   color: #777;
   border-left: 0.25em solid #ddd;
   margin: 1em 0;
+}
+
+.single .admin-control-edit {
+  position: absolute;
+  top: -40px;
+  right: 100px;
+  text-decoration: none;
+}
+
+.single .admin-control-delete {
+  position: absolute;
+  top: -40px;
+  right: 0;
 }
 
 .tags {
@@ -1351,8 +1365,8 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   margin-bottom: 50px;
 }
 
-.similars h3 {
-  font-weight: 400;
+.similars h4 {
+  font-size: 18px;
 }
 
 .similar-article {
@@ -1373,8 +1387,8 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
   border-radius: 4px 4px 0 0;
 }
 
-.similar-article p {
-  margin: 0;
+.similar-article span {
+  display: block;
   padding: 15px;
 }
 
@@ -1392,7 +1406,7 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
 .article .info span,
 .single .info span {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 16px;
 }
 
 .article .info span.pull-right,
