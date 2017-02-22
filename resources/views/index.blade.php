@@ -4,8 +4,8 @@
 <meta property="og:url" content="{{ Request::url() }}">
 <meta property="og:title" content="{{ config('app.name') }}">
 <meta property="og:description" content="Cтатьи про программирование. Фронтенд, бэкенд, мобильные приложения, карьера.">
-<meta property="image" content="{{ URL::asset('img/share/537x240.png') }}"> <!-- VK -->
-<meta property="og:image" content="{{ URL::asset('img/share/1200x630.png') }}"> <!-- FB -->
+<meta property="image" content="{{ URL::asset('img/share/537x240.png', true) }}"> <!-- VK -->
+<meta property="og:image" content="{{ URL::asset('img/share/1200x630.png', true) }}"> <!-- FB -->
 @stop
 
 @section ('content')
@@ -16,11 +16,11 @@
 @forelse ($articles as $article)
     <article class="article">
         @if (null !== $article->picture)
-            <a href='{{ URL::to("article/$article->id") }}'>
+            <a href='{{ URL::secure("article/$article->id") }}'>
                 <img src="{{ $article->picture->path }}" alt="">
             </a>
         @endif
-        <a href='{{ URL::to("article/$article->id") }}' class="title">
+        <a href='{{ URL::secure("article/$article->id") }}' class="title">
             <h2>{{ $article->title }}</h2>
         </a>
         <p>{{ $article->getPreviewText() }}</p>

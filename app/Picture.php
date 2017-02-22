@@ -13,7 +13,7 @@ class Picture extends Model
 
     public function getPathAttribute($value)
     {
-        return URL::asset($value);
+        return URL::asset($value, true);
     }
 
     public static function storeFile($file)
