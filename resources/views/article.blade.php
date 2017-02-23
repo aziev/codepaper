@@ -7,20 +7,20 @@
 <meta property="og:title" content="{{ $article->title }}">
 <meta property="og:description" content="{{ $article->getPreviewText() }}">
 @if (null !== $article->picture)
-    <meta property="image" content="{{ URL::asset($article->picture->getPath('vk'), true) }}"> <!-- VK -->
-    <meta property="og:image" content="{{ URL::asset($article->picture->getPath('fb'), true) }}"> <!-- FB -->
+    <meta property="image" content="{{ URL::asset($article->picture->getPath('vk')) }}"> <!-- VK -->
+    <meta property="og:image" content="{{ URL::asset($article->picture->getPath('fb')) }}"> <!-- FB -->
 @endif
 @stop
 
 @section ('content')
 <article class="single">
     @can('update', $article)
-        <a href='{{ URL::secure("article/$article->id/edit") }}' class="space-right admin-control-edit">
+        <a href='{{ URL::to("article/$article->id/edit") }}' class="space-right admin-control-edit">
             <i class="fa fa-pencil" aria-hidden="true"></i>Редактировать
         </a>
     @endcan
     @can('delete', $article)
-        <form action='{{ URL::secure("article/$article->id") }}' method="POST" class="inline-form admin-control-delete">
+        <form action='{{ URL::to("article/$article->id") }}' method="POST" class="inline-form admin-control-delete">
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
             <button onclick="return confirm('Вы уверены что хотите удалить статью?');">
@@ -52,7 +52,7 @@
     <ul class="tags">
         @foreach ($article->tags as $tag)
             <li>
-                <a href='{{ URL::secure("tag/$tag->title") }}'>{{ $tag->title }}</a>
+                <a href='{{ URL::to("tag/$tag->title") }}'>{{ $tag->title }}</a>
             </li>
         @endforeach
     </ul>
@@ -72,7 +72,7 @@
             @foreach ($similars as $similar)
                 <div class="col-xs-12 col-sm-6">
                     <div class="similar-article">
-                        <a href='{{ URL::secure("article/$similar->id") }}'>
+                        <a href='{{ URL::to("article/$similar->id") }}'>
                             @if (null !== $similar->picture)
                                 <img src="{{ $similar->picture->path }}" alt="">
                             @endif

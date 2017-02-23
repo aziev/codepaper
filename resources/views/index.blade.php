@@ -4,8 +4,8 @@
 <meta property="og:url" content="{{ Request::url() }}">
 <meta property="og:title" content="{{ config('app.name') }}">
 <meta property="og:description" content="Cтатьи про программирование. Фронтенд, бэкенд, мобильные приложения, карьера.">
-<meta property="image" content="{{ URL::asset('img/share/537x240.png', true) }}"> <!-- VK -->
-<meta property="og:image" content="{{ URL::asset('img/share/1200x630.png', true) }}"> <!-- FB -->
+<meta property="image" content="{{ URL::asset('img/share/537x240.png') }}"> <!-- VK -->
+<meta property="og:image" content="{{ URL::asset('img/share/1200x630.png') }}"> <!-- FB -->
 @stop
 
 @section ('content')
@@ -16,11 +16,11 @@
 @forelse ($articles as $article)
     <article class="article">
         @if (null !== $article->picture)
-            <a href='{{ URL::secure("article/$article->id") }}'>
+            <a href='{{ URL::to("article/$article->id") }}'>
                 <img src="{{ $article->picture->path }}" alt="">
             </a>
         @endif
-        <a href='{{ URL::secure("article/$article->id") }}' class="title">
+        <a href='{{ URL::to("article/$article->id") }}' class="title">
             <h2>{{ $article->title }}</h2>
         </a>
         <p>{{ $article->getPreviewText() }}</p>
@@ -33,9 +33,6 @@
                 <i class="fa fa-comments-o" aria-hidden="true"></i>{{ $article->getCommentsCount() }}
             </span>
         </div>
-        @foreach ($article->tags as $tag)
-            <!-- <span>{{ $tag->title }}</span> -->
-        @endforeach
     </article>
 @empty
     <p>К сожалению, по вашему запросу ничего не найдено.</p>
