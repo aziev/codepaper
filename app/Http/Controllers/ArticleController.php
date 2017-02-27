@@ -7,6 +7,7 @@ use App\Article;
 use App\Picture;
 use App\Category;
 use Image;
+use Cookie;
 // use File;
 use URL;
 use Route;
@@ -106,7 +107,21 @@ class ArticleController extends Controller
         $article = Article::whereId($id)->with(['user', 'tags'])->firstOrFail();
         $article->increment('views');
 
-        $similars = Article::where('category_id', $article->category_id)->where('id', '!=', $article->id)->take(2)->get();
+        $viewed_articles = Cookie::get('viewed_articles');
+
+        if($viewed_articles)
+        {
+            array_push($viewed_articles, $id);
+            $viewed_articles = array_unique($viewed_articles);
+        }
+        else
+        {
+            $viewed_articles[] = $id;
+        }
+
+        Cookie::queue('viewed_articles', $viewed_articles);
+
+        $similars = Article::where('category_id', $article->category_id)->whereNotIn('id', $viewed_articles)->take(2)->get();
 
         return view('article', compact('article', 'similars'));
     }
