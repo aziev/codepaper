@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>@yield ('title') {{ config('app.name') }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css?v=' . filemtime('css/app.css')) }}">
+    <link rel="stylesheet" href="{{ version('css/app.css') }}">
     <link rel="icon" href="{{ URL::asset('favicon.ico') }}">
     @yield ('meta')
     <meta property="fb:app_id" content="729337813885152">
