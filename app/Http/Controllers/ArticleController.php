@@ -7,6 +7,7 @@ use App\Article;
 use App\Picture;
 use App\Category;
 use Image;
+use Auth;
 use Cookie;
 // use File;
 use URL;
@@ -46,7 +47,14 @@ class ArticleController extends Controller
             $builder->where('title', 'LIKE', "%$search%")->orWhere('text', 'LIKE', "%$search%");
         }
         
-        $articles = $builder->paginate(10);
+        if (Auth::check())
+        {
+            $articles = $builder->paginate(10);
+        }
+        else
+        {
+            $articles = $builder->where('published', 1)->paginate(10);
+        }
 
         return view('index', compact('articles'));
     }
@@ -73,7 +81,7 @@ class ArticleController extends Controller
     {
         $this->authorize('create', Article::class);
         
-        $fields = array_merge($request->only(['title', 'text', 'original_url', 'category_id']), [
+        $fields = array_merge($request->only(['title', 'text', 'original_url', 'category_id', 'published']), [
             'user_id' => $request->user()->id,
         ]);
 
@@ -154,6 +162,8 @@ class ArticleController extends Controller
         $this->authorize('update', Article::class);
 
         $article = Article::whereId($id)->firstOrFail();
+
+        $article->published = $request->get('published');
 
         $article->update($request->all());
 

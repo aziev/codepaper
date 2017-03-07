@@ -49,6 +49,15 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="published" value="1"
+                            {{ isset($article) && $article->published == 1 ? 'checked' : '' }}>
+                            <span>Опубликовать</span>
+                        </label>
+                    </div>
+                </div>
                 <button class="btn btn-default" type="submit">Отправить</button>
             </form>
         </div>

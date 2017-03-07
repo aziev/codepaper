@@ -22,6 +22,7 @@ class CreateArticlesTable extends Migration
             $table->string('original_url')->nullable();
             $table->integer('category_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            $table->tinyinteger('published')->nullable();
 
             $table->timestamps();
 

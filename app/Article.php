@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Cache;
 
 class Article extends Model
 {
-    protected $fillable = ['title', 'text', 'original_url', 'category_id', 'user_id'];
+    protected $fillable = ['title', 'text', 'original_url', 'category_id', 'user_id', 'published'];
 
     public function category()
     {
-    	return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function tags()
     {
-    	return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class);
     }
 
     public function user()
@@ -66,14 +66,14 @@ class Article extends Model
      */
     public function getClosestURL($isPrev = true)
     {
-    	$prev_article = Article::where('created_at', $isPrev ? '<' : '>', $this->created_at)->latest()->first();
+        $prev_article = Article::where('created_at', $isPrev ? '<' : '>', $this->created_at)->latest()->first();
 
-    	if (!$prev_article)
-    	{
-    		return null;
-    	}
+        if (!$prev_article)
+        {
+            return null;
+        }
 
-    	return URL::to("/article/$prev_article->id");
+        return URL::to("/article/$prev_article->id");
     }
 
     /**
