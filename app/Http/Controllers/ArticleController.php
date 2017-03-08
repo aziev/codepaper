@@ -47,14 +47,13 @@ class ArticleController extends Controller
             $builder->where('title', 'LIKE', "%$search%")->orWhere('text', 'LIKE', "%$search%");
         }
         
-        if (Auth::check())
+        if (!Auth::check())
         {
-            $articles = $builder->paginate(10);
+            $builder->where('published', 1);
         }
-        else
-        {
-            $articles = $builder->where('published', 1)->paginate(10);
-        }
+
+        $articles = $builder->paginate(10);
+
 
         return view('index', compact('articles'));
     }
