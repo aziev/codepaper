@@ -52,6 +52,7 @@
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
+                            <input type="hidden" name="published" value="0">
                             <input type="checkbox" name="published" value="1"
                             {{ isset($article) && $article->published == true ? 'checked' : '' }}>
                             <span>Опубликовать</span>
