@@ -53,7 +53,7 @@
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="published" value="1"
-                            {{ isset($article) && $article->published === true ? 'checked' : '' }}>
+                            {{ isset($article) && $article->published == true ? 'checked' : '' }}>
                             <span>Опубликовать</span>
                         </label>
                     </div>
