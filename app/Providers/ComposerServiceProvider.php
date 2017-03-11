@@ -19,8 +19,7 @@ class ComposerServiceProvider extends ServiceProvider
         view()->composer('layout', function($view) {
 
             $categories = Category::orderBy('title')->get();
-            //$tags = Tag::all();
-            $popular_articles = Article::orderBy('views', 'DESC')->take(3)->get();
+            $popular_articles = Article::orderBy('views', 'DESC')->take(5)->get();
 
             $view->with(compact('categories', 'popular_articles'));
         });
