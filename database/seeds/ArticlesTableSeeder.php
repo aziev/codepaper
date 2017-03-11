@@ -29,6 +29,7 @@ class ArticlesTableSeeder extends Seeder
             'original_url' => $faker->url(),
             'category_id' => 2,
             'user_id' => 1,
+            'published' => true,
             'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ],[
@@ -37,6 +38,7 @@ class ArticlesTableSeeder extends Seeder
             'original_url' => $faker->url(),
             'category_id' => 2,
             'user_id' => 1,
+            'published' => true,
             'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ],[
@@ -45,6 +47,7 @@ class ArticlesTableSeeder extends Seeder
             'original_url' => $faker->url(),
             'category_id' => 2,
             'user_id' => 1,
+            'published' => true,
             'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ],[
@@ -53,6 +56,7 @@ class ArticlesTableSeeder extends Seeder
             'original_url' => $faker->url(),
             'category_id' => 1,
             'user_id' => 2,
+            'published' => true,
             'created_at' => $faker->dateTimeThisMonth(),
             'updated_at' => $faker->dateTimeThisMonth(),
         ]]);

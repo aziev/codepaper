@@ -49,11 +49,10 @@ class ArticleController extends Controller
         
         if (!Auth::check())
         {
-            $builder->where('published', 1);
+            $builder->where('published', true);
         }
 
         $articles = $builder->paginate(10);
-
 
         return view('index', compact('articles'));
     }
@@ -162,7 +161,7 @@ class ArticleController extends Controller
 
         $article = Article::whereId($id)->firstOrFail();
 
-        $article->published = $request->get('published');
+        // $article->published = $request->get('published');
 
         $article->update($request->all());
 
