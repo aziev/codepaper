@@ -1581,8 +1581,7 @@ footer a:hover, footer .inline-form button:hover, .inline-form footer button:hov
 }
 
 .headline-mainpage {
-  margin: 0 0 -30px;
-  text-transform: capitalize;
+  margin: 0 0 50px;
 }
 
 @media (max-width: 1000px) {
