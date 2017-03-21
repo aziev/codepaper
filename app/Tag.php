@@ -7,6 +7,8 @@ use App\Article;
 
 class Tag extends Model
 {
+    protected $fillable = ['title'];
+
     public function articles()
     {
     	return $this->belongsToMany(Article::class);

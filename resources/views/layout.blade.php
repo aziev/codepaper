@@ -51,6 +51,16 @@
                         </a>
                     @endforeach
                 </div>
+                <div class="sidebar">
+                    <h3>Теги</h3>
+                    <div class="tags">
+                        @foreach ($tags as $tag)
+                            <a href='{{ URL::to("tag/$tag->title") }}' class="tag">
+                                {{ $tag->title }}
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </div>

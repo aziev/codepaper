@@ -11,7 +11,10 @@
 @section ('content')
 
 @if (Request::has('search'))
-    <h1>Результаты поиска по запросу "{{ Request::input('search') }}":</h1>
+    <h1 class="headline-mainpage">Результаты поиска по запросу "{{ Request::input('search') }}":</h1>
+@endif
+@if (Request::is('tag/*'))
+    <h1 class="headline-mainpage">{{ Request::segment(2) }}</h1>
 @endif
 @forelse ($articles as $article)
     <article class="article">
