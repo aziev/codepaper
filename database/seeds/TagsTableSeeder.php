@@ -1,5 +1,6 @@
 <?php
 
+use App\Tag;
 use Illuminate\Database\Seeder;
 
 class TagsTableSeeder extends Seeder
@@ -11,15 +12,14 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tags')->delete();
         DB::table('tags')->truncate();
 
-        DB::table('tags')->insert([[
-            'title' => 'Laravel',
-        ],[
-            'title' => 'PHP',
-        ],[
-            'title' => 'JavaScript',
-        ]]);
+        foreach (['Django', 'PHP', 'JavaScript'] as $tag) {
+            $tag = Tag::create([
+                'title' => $tag,
+            ]);
+
+            $tag->articles()->attach(rand(1, 4));
+        }
     }
 }
