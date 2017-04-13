@@ -20,7 +20,7 @@ class ComposerServiceProvider extends ServiceProvider
 
             $categories = Category::orderBy('title')->get();
             $popular_articles = Article::orderBy('views', 'DESC')->take(5)->get();
-            $tags = Tag::whereHas('articles')->get();
+            $tags = Tag::whereHas('articles')->orderBy('title')->get();
 
             $view->with(compact('categories', 'popular_articles', 'tags'));
         });
