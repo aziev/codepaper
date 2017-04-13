@@ -16,6 +16,9 @@
 @if (Request::is('tag/*'))
     <h1 class="headline-mainpage">{{ Request::segment(2) }}</h1>
 @endif
+@if (Request::is('category/*'))
+    <h1 class="headline-mainpage">{{ $category->title }}</h1>
+@endif
 @forelse ($articles as $article)
     <article class="article">
         @if (null !== $article->picture)

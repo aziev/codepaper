@@ -9,7 +9,6 @@ use App\Category;
 use Image;
 use Auth;
 use Cookie;
-// use File;
 use URL;
 use Route;
 
@@ -29,7 +28,7 @@ class ArticleController extends Controller
             switch (\Request::segment(1))
             {
                 case 'category':
-                    $category = Category::whereSlug($param)->firstOrFail(['id']);
+                    $category = Category::whereSlug($param)->firstOrFail();
                     $builder->where('category_id', $category->id);
                     break;
                 case 'tag':
@@ -38,7 +37,7 @@ class ArticleController extends Controller
                     });
                     break;
             }
-            
+
         }
 
         if ($request->has('search'))
@@ -46,7 +45,7 @@ class ArticleController extends Controller
             $search = $request['search'];
             $builder->where('title', 'LIKE', "%$search%")->orWhere('text', 'LIKE', "%$search%");
         }
-        
+
         if (!Auth::check())
         {
             $builder->where('published', true);
@@ -54,7 +53,13 @@ class ArticleController extends Controller
 
         $articles = $builder->paginate(10);
 
-        return view('index', compact('articles'));
+        $compact = compact('articles');
+
+        if (isset($category)) {
+            $compact['category'] = $category;
+        }
+
+        return view('index', $compact);
     }
 
     /**
@@ -78,7 +83,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $this->authorize('create', Article::class);
-        
+
         $fields = array_merge($request->only(['title', 'text', 'original_url', 'category_id', 'published']), [
             'user_id' => $request->user()->id,
         ]);
