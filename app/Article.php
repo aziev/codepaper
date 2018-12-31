@@ -111,11 +111,13 @@ class Article extends Model
         $api_method = "widgets.getComments";
         $url = URL::to("article/$this->id");
 
-        $api_url = "https://api.vk.com/method/$api_method?url=$url&widget_api_id=$api_id";
+        $api_url = "https://api.vk.com/method/$api_method?url=$url&widget_api_id=$api_id&v=5.21&access_token=b1e679f9b1e679f9b1e679f96eb1be3a8cbb1e6b1e679f9edcc27dbd2f88187e173c66c";
 
         $result = json_decode(file_get_contents($api_url));
 
-        $count = $result->response->count;
+        $count = isset($result->response) ? $result->response->count : null;
+
+        // $count = count(vk()->getComments());
 
         Cache::put($key, $count, 5);
 

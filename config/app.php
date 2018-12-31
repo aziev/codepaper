@@ -170,6 +170,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         BladeSvg\BladeSvgServiceProvider::class,
+        Helldar\Vk\VkServiceProvider::class,
 
         /*
          * Application Service Providers...

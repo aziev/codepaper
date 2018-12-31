@@ -9,7 +9,8 @@
         "laravel/framework": "5.4.*",
         "intervention/image": "^2.3",
         "nothingworks/blade-svg": "^0.1.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "andrey-helldar/vk": "^5.63"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
